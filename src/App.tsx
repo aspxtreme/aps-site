@@ -10,6 +10,7 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
 import ContactPage from './components/ContactPage';
 import AboutPage from './components/AboutPage';
+import ServicesPage from './components/ServicesPage';
 
 const HomePage = () => (
   <>
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
         </Routes>

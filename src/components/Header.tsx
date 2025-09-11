@@ -65,7 +65,7 @@ const Header = () => {
           </div>
 
           <nav className="hidden md:flex space-x-8">
-            {['Home', 'Services'].map((item) => (
+            {['Home'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
@@ -75,6 +75,13 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
+            <button
+              onClick={() => navigateToPage('/services')}
+              className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group"
+            >
+              Services
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 group-hover:w-full"></span>
+            </button>
             <button
               onClick={() => navigateToPage('/about')}
               className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group"
@@ -102,7 +109,7 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-primary-blue border-t border-white/20 shadow-lg">
             <nav className="px-4 py-4 space-y-2">
-              {['Home', 'Services'].map((item) => (
+              {['Home'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
@@ -111,6 +118,12 @@ const Header = () => {
                   {item}
                 </button>
               ))}
+              <button
+                onClick={() => navigateToPage('/services')}
+                className="block w-full text-left px-4 py-2 text-white hover:bg-white/10 hover:text-accent-cyan rounded-lg transition-colors duration-200"
+              >
+                Services
+              </button>
               <button
                 onClick={() => navigateToPage('/about')}
                 className="block w-full text-left px-4 py-2 text-white hover:bg-white/10 hover:text-accent-cyan rounded-lg transition-colors duration-200"

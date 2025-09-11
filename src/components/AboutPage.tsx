@@ -102,6 +102,7 @@ const AboutPage = () => {
         <div className="grid lg:grid-cols-2 gap-16 mb-20">
           <div className="bg-secondary-blue/20 p-8 rounded-2xl border-2 border-secondary-blue/30">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Promise</h2>
+            <h3 className="text-2xl font-semibold text-accent-red mb-6">Disciplined. Caring. Great Communication.</h3>
             <p className="text-xl text-gray-600 leading-relaxed">
               We carry the mission, so you can keep the credit. From inspections to execution, we deliver professional 
               results that make our clients look good.
@@ -170,15 +171,19 @@ const AboutPage = () => {
         <div className="mb-20 relative bg-slate-50 p-12 rounded-2xl border-2 border-gray-200 overflow-hidden">
           {/* Background Image */}
           <div 
-            className="absolute inset-0 opacity-40 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 opacity-50 bg-cover bg-no-repeat"
             style={{
-              backgroundImage: 'url(https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/building-flag.jpg)'
+              backgroundImage: 'url(https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/building-flag.jpg)',
+              backgroundPosition: 'right 20% top 0%'
             }}
           ></div>
           
+          {/* White Overlay for Readability */}
+          <div className="absolute inset-0 bg-white opacity-20"></div>
+          
           {/* Content */}
           <div className="relative z-10 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Your Dependable Partner</h2>
+            <h2 className="text-3xl font-bold text-primary-blue mb-6">Your Dependable Partner</h2>
             <p className="text-xl text-gray-900 leading-relaxed mb-6 max-w-4xl mx-auto">
               For more than a decade, our "All-Star" professional property services team has served as the chosen partner of top property management firms and commercial real estate owners because APS is always reliable, fair and disciplined.
             </p>

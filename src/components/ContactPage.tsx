@@ -114,27 +114,27 @@ const ContactPage = () => {
               </p>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center">
-                  <div className="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-3"></div>
+                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
                   Trash Chute Repair & Cleaning
                 </li>
                 <li className="flex items-center">
-                  <div className="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-3"></div>
+                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
                   Professional Window Cleaning
                 </li>
                 <li className="flex items-center">
-                  <div className="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-3"></div>
+                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
                   Asphalt Striping & Surface Repair
                 </li>
                 <li className="flex items-center">
-                  <div className="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-3"></div>
+                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
                   Parking Garage Pressure Washing
                 </li>
                 <li className="flex items-center">
-                  <div className="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-3"></div>
+                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
                   Commercial Handyman Services
                 </li>
                 <li className="flex items-center">
-                  <div className="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-3"></div>
+                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
                   Plus More Cost-Effective Solutions
                 </li>
               </ul>
@@ -225,7 +225,7 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
                     />
                   </div>
                   <div>
@@ -239,7 +239,7 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
                     />
                   </div>
                 </div>
@@ -255,7 +255,7 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
                     />
                   </div>
                   <div>
@@ -267,7 +267,7 @@ const ContactPage = () => {
                       name="propertyType"
                       value={formData.propertyType}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
                     >
                       <option value="">Select Property Type</option>
                       <option value="commercial">Commercial</option>
@@ -290,7 +290,7 @@ const ContactPage = () => {
                     required
                     rows={5}
                     placeholder="Tell us about your project needs ..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 resize-none"
                   />
                 </div>
 
@@ -305,7 +305,7 @@ const ContactPage = () => {
                     onChange={handleChange}
                     multiple
                     accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100"
                   />
                   <p className="text-sm text-gray-500 mt-2">
                     Accepted formats: JPG, PNG, PDF, DOC, DOCX (Max 10MB per file)

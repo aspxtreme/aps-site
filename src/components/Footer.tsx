@@ -42,7 +42,11 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-6">Services</h4>
+            <h4 className="text-lg font-semibold mb-6">
+              <Link to="/services" onClick={scrollToTop} className="hover:text-accent-cyan transition-colors duration-200">
+                Services
+              </Link>
+            </h4>
             <ul className="space-y-3 text-white">
               <li>Trash Chute Repair & Cleaning</li>
               <li>Professional Window Cleaning</li>
@@ -78,9 +82,12 @@ const Footer = () => {
             &copy; 2025 All Star Property Services, Inc. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/about" onClick={scrollToTop} className="text-white hover:text-accent-cyan transition-colors duration-200">About</Link>
             <Link to="/privacy-policy" onClick={scrollToTop} className="text-white hover:text-accent-cyan transition-colors duration-200">Privacy Policy</Link>
             <Link to="/terms-of-use" onClick={scrollToTop} className="text-white hover:text-accent-cyan transition-colors duration-200">Terms of Use</Link>
+          </div>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link to="/services" onClick={scrollToTop} className="text-white hover:text-accent-cyan transition-colors duration-200">Services</Link>
+            <Link to="/about" onClick={scrollToTop} className="text-white hover:text-accent-cyan transition-colors duration-200">About</Link>
             <Link to="/contact" onClick={scrollToTop} className="text-white hover:text-accent-cyan transition-colors duration-200">Contact Us</Link>
           </div>
         </div>
