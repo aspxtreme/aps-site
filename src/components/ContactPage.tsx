@@ -2,29 +2,6 @@ import React from 'react';
 import { Phone, Mail, MapPin, Clock, Award, Shield, MessageCircle } from 'lucide-react';
 
 const ContactPage = () => {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString()
-      });
-      
-      if (response.ok) {
-        window.location.href = '/thank-you';
-      } else {
-        alert('There was a problem submitting your form. Please try again.');
-      }
-    } catch (error) {
-      alert('There was a problem submitting your form. Please try again.');
-    }
-  };
-
   const advantages = [
     {
       icon: Clock,
@@ -68,11 +45,10 @@ const ContactPage = () => {
             <div className="bg-white border-2 border-accent-red/20 rounded-xl p-8 shadow-lg shadow-accent-red/10">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Request Your Free Estimate</h2>
               <form
-                onSubmit={handleSubmit}
                 name="contactpage-contact"
                 method="POST"
-               action="/thank-you"
-                encType="multipart/form-data"
+                action="/thank-you"
+               enctype="multipart/form-data"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
               >
