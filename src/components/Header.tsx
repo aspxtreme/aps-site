@@ -57,19 +57,19 @@ const Header = () => {
                 <img 
                   src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-only-blu-bg.png" 
                   alt="APS Logo" 
-                  className="h-10 w-auto"
+                  className="h-6 sm:h-8 md:h-10 w-auto"
                 />
-                <h1 className="text-3xl font-bold text-white leading-none">All-Star Property Service</h1>
+                <h1 className="text-sm sm:text-lg md:text-2xl font-medium text-white leading-tight tracking-tighter">All-Star Property Service</h1>
               </button>
             </div>
           </div>
 
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-4 xl:space-x-8">
             {['Home'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group"
+                className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group text-sm lg:text-base"
               >
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 group-hover:w-full"></span>
@@ -77,21 +77,21 @@ const Header = () => {
             ))}
             <button
               onClick={() => navigateToPage('/services')}
-              className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group text-sm lg:text-base"
             >
               Services
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 group-hover:w-full"></span>
             </button>
             <button
               onClick={() => navigateToPage('/about')}
-              className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group text-sm lg:text-base"
             >
               About
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 group-hover:w-full"></span>
             </button>
             <button
               onClick={() => navigateToPage('/contact')}
-              className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group"
+              className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group text-sm lg:text-base"
             >
               Contact Us
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 group-hover:w-full"></span>
@@ -100,14 +100,14 @@ const Header = () => {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors duration-200"
+            className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors duration-200"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-primary-blue border-t border-white/20 shadow-lg">
+          <div className="lg:hidden absolute top-16 left-0 right-0 bg-primary-blue border-t border-white/20 shadow-lg z-50">
             <nav className="px-4 py-4 space-y-2">
               {['Home'].map((item) => (
                 <button

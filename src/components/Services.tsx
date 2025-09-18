@@ -101,27 +101,27 @@ const Services = () => {
     <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Professional Property Services
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             As a veteran-owned company, APS brings discipline, precision, and follow-through to every service. Our clients have worked with us for decades because we offer reliability and compliance at a fair price.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
           {servicesRow1.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div key={index} className="bg-white p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <div className="w-16 h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-6">
+              <div key={index} className="bg-white p-6 lg:p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-4 lg:mb-6">
                   <Icon className="w-8 h-8 text-secondary-blue" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-sm lg:text-base text-gray-600 mb-4 lg:mb-6 leading-relaxed">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-700">
+                    <li key={idx} className="flex items-center text-xs lg:text-sm text-gray-700">
                       <div className="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-3"></div>
                       {feature}
                     </li>
@@ -135,19 +135,19 @@ const Services = () => {
         {/* Image Carousel */}
         <ImageCarousel />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
           {servicesRow2.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div key={index} className="bg-white p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
-                <div className="w-16 h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-6">
+              <div key={index} className="bg-white p-6 lg:p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-4 lg:mb-6">
                   <Icon className="w-8 h-8 text-secondary-blue" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-sm lg:text-base text-gray-600 mb-4 lg:mb-6 leading-relaxed">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-700">
+                    <li key={idx} className="flex items-center text-xs lg:text-sm text-gray-700">
                       <div className="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-3"></div>
                       {feature}
                     </li>
@@ -158,27 +158,27 @@ const Services = () => {
           })}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 text-center">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 text-center">
           <div className="p-6">
-            <div className="w-16 h-16 bg-accent-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 lg:w-16 lg:h-16 bg-accent-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock className="w-8 h-8 text-accent-red" />
             </div>
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">Rapid Response</h4>
-            <p className="text-gray-600">24-48 hour quote turnaround for all service requests</p>
+            <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">Rapid Response</h4>
+            <p className="text-sm lg:text-base text-gray-600">24-48 hour quote turnaround for all service requests</p>
           </div>
           <div className="p-6">
-            <div className="w-16 h-16 bg-secondary-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Award className="w-8 h-8 text-secondary-blue" />
             </div>
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">Certified Professionals</h4>
-            <p className="text-gray-600">Licensed contractors with specialized compliance expertise</p>
+            <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">Certified Professionals</h4>
+            <p className="text-sm lg:text-base text-gray-600">Licensed contractors with specialized compliance expertise</p>
           </div>
-          <div className="p-6">
-            <div className="w-16 h-16 bg-primary-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="p-6 sm:col-span-2 lg:col-span-1">
+            <div className="w-12 h-12 lg:w-16 lg:h-16 bg-primary-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Shield className="w-8 h-8 text-primary-blue" />
             </div>
-            <h4 className="text-xl font-semibold text-gray-900 mb-2">Veteran Owned</h4>
-            <p className="text-gray-600">Military precision and reliability in every service</p>
+            <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">Veteran Owned</h4>
+            <p className="text-sm lg:text-base text-gray-600">Military precision and reliability in every service</p>
           </div>
         </div>
       </div>

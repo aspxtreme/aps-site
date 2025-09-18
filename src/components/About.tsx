@@ -29,13 +29,13 @@ const About = () => {
     <>
       <section id="about" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                 Why Choose All-Star Property Services
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
                 As a veteran-owned company, we deliver professional property services with military precision, 
                 focusing on reliable solutions, regulatory compliance, and fair pricing.
               </p>
@@ -46,12 +46,12 @@ const About = () => {
                 const Icon = advantage.icon;
                 return (
                   <div key={index} className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-secondary-blue/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-secondary-blue/20 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Icon className="w-6 h-6 text-primary-blue" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">{advantage.title}</h4>
-                      <p className="text-gray-600 leading-relaxed">{advantage.description}</p>
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">{advantage.title}</h4>
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{advantage.description}</p>
                     </div>
                   </div>
                 );
@@ -63,37 +63,37 @@ const About = () => {
             <img 
               src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/pressure-washing.png" 
               alt="Professional pressure washing services"
-              className="w-full h-[500px] object-cover object-right rounded-2xl shadow-2xl animate-float"
+              className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover object-right rounded-2xl shadow-2xl animate-float"
             />
-            <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-lg border animate-slide-in-left">
+            <div className="absolute -bottom-4 -left-4 sm:-bottom-8 sm:-left-8 bg-white p-4 sm:p-6 rounded-xl shadow-lg border animate-slide-in-left">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-blue">15+</div>
-                <div className="text-sm text-gray-600">Years Experience</div>
+                <div className="text-2xl sm:text-3xl font-bold text-primary-blue">15+</div>
+                <div className="text-xs sm:text-sm text-gray-600">Years Experience</div>
               </div>
             </div>
-            <div className="absolute -top-8 -right-8 bg-white p-6 rounded-xl shadow-lg border animate-slide-in-right">
+            <div className="absolute -top-4 -right-4 sm:-top-8 sm:-right-8 bg-white p-4 sm:p-6 rounded-xl shadow-lg border animate-slide-in-right">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-red">100%</div>
-                <div className="text-sm text-gray-600">Veteran Owned</div>
+                <div className="text-2xl sm:text-3xl font-bold text-accent-red">100%</div>
+                <div className="text-xs sm:text-sm text-gray-600">Veteran Owned</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* New Our Approach Section */}
-        <div className="mt-20 bg-primary-blue rounded-2xl p-12 shadow-lg">
+        <div className="mt-12 lg:mt-20 bg-primary-blue rounded-2xl p-6 sm:p-8 lg:p-12 shadow-lg">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-white mb-4">Our Approach</h3>
-              <p className="text-xl text-white leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Our Approach</h3>
+              <p className="text-base sm:text-lg lg:text-xl text-white leading-relaxed">
                 With military discipline and attention to detail, we focus on direct customer needs, professional 
                 inspections, competitive quoting, and reliable service completion.
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="rounded-xl p-8 text-white border-2 border-accent-red" style={{width: 'calc(100% + 100px)'}}>
-                <h4 className="text-2xl font-bold text-center mb-8 text-white">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="rounded-xl p-6 sm:p-8 text-white border-2 border-accent-red lg:w-[calc(100%+100px)]">
+                <h4 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8 text-white">
                   <span className="text-[#7DFFFC]">Inspect</span><span className="text-white">. </span>
                   <span className="text-[#7DFFFC]">Quote</span><span className="text-white">. </span>
                   <span className="text-[#7DFFFC]">Execute</span><span className="text-white">.</span>
@@ -102,39 +102,39 @@ const About = () => {
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-2 h-2 bg-accent-cyan rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                       Every mission begins with a free detailed inspection, followed by a clear estimate within 24 hours in most cases.
                     </p>
                   </div>
                   
                   <div className="flex items-start space-x-4">
                     <div className="w-2 h-2 bg-accent-cyan rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                       At APS, we've eliminated the expensive overhead, unnecessary marketing fluff, and corporate bureaucracy.
                     </p>
                   </div>
                   
                   <div className="flex items-start space-x-4">
                     <div className="w-2 h-2 bg-accent-cyan rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                       We complete each job with disciplined precision, leaving your property inspection-ready.
                     </p>
                   </div>
                   
                   <div className="flex items-start space-x-4">
                     <div className="w-2 h-2 bg-accent-cyan rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
                       So say goodbye to missed deadlines, sloppy work and inflated invoices. And say hello to project precision and attention to detail.
                     </p>
                   </div>
                 </div>
               </div>
               
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center lg:justify-start">
                 <img 
                   src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/repair-main.png" 
                   alt="Professional repair services"
-                  className="w-3/5 max-w-sm h-auto rounded-xl shadow-lg ml-[100px]"
+                  className="w-4/5 sm:w-3/5 lg:w-3/5 max-w-sm h-auto rounded-xl shadow-lg lg:ml-[100px]"
                 />
               </div>
             </div>
