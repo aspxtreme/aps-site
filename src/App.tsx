@@ -34,23 +34,10 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route 
-            path="/thank-you" 
-            element={
-              <>
-                {console.log('ThankYou route matched')}
-                <ThankYouPage />
-              </>
-            } 
-          />
+          <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
-          <Route path="*" element={
-            <>
-              {console.log('Catch-all route matched for:', window.location.pathname)}
-              <HomePage />
-            </>
-          } />
+          <Route path="*" element={<HomePage />} />
         </Routes>
         <Footer />
       </div>

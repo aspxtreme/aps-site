@@ -61,6 +61,7 @@ const Contact = () => {
             <form
               name="homepage-contact"
               method="POST"
+              encType="multipart/form-data"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               action="/thank-you"

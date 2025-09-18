@@ -1,38 +1,37 @@
-@@ .. @@
- <html lang="en">
-   <head>
-     <meta charset="UTF-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <title>All Star Property Services</title>
-   </head>
-   <body>
-     <div id="root"></div>
-+    
-+    <!-- Hidden forms for Netlify detection -->
-+    <form name="homepage-contact" netlify netlify-honeypot="bot-field" hidden>
-+      <input type="text" name="name" />
-+      <input type="email" name="email" />
-+      <input type="tel" name="phone" />
-+      <select name="propertyType">
-+        <option value="commercial">Commercial</option>
-+      </select>
-+      <textarea name="message"></textarea>
-+      <input type="file" name="attachments" />
-+      <input type="hidden" name="source" />
-+    </form>
-+    
-+    <form name="contactpage-contact" netlify netlify-honeypot="bot-field" hidden>
-+      <input type="text" name="name" />
-+      <input type="email" name="email" />
-+      <input type="tel" name="phone" />
-+      <select name="propertyType">
-+        <option value="commercial">Commercial</option>
-+      </select>
-+      <textarea name="message"></textarea>
-+      <input type="file" name="attachments" />
-+      <input type="hidden" name="source" />
-+    </form>
-+    
-     <script type="module" src="/src/main.tsx"></script>
-   </body>
- </html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Star Property Services</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Hidden forms for Netlify detection -->
+    <form name="homepage-contact" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="propertyType">
+        <option value="commercial">Commercial</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input type="file" name="attachments" />
+      <input type="hidden" name="source" />
+    </form>
+    
+    <form name="contactpage-contact" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="propertyType">
+        <option value="commercial">Commercial</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input type="file" name="attachments" />
+      <input type="hidden" name="source" />
+    </form>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
