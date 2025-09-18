@@ -188,7 +188,7 @@ const Contact = () => {
                   </label>
                   <select
                     id="propertyType"
-                    name="property-type"
+                    name="propertyType"
                     value={formData.propertyType}
                     onChange={handleChange}
                     required
