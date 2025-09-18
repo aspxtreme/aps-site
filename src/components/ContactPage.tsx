@@ -48,7 +48,7 @@ const ContactPage = () => {
                 name="contactpage-contact"
                 method="POST"
                 action="/thank-you"
-                encType="multipart/form-data"
+                enctype="multipart/form-data"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
               >
