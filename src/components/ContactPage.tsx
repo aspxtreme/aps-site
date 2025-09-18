@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Award, Shield, MessageCircle } from 'lucide-react';
 
 const ContactPage = () => {
@@ -7,54 +7,15 @@ const ContactPage = () => {
     email: '',
     phone: '',
     propertyType: '',
-    message: '',
-    attachments: null as FileList | null
+    message: ''
   });
-
-  const [trackingData, setTrackingData] = useState({
-    timestamp: '',
-    utmSource: '',
-    utmMedium: '',
-    utmCampaign: '',
-    utmTerm: '',
-    utmContent: '',
-    referrer: '',
-    userAgent: '',
-    pageUrl: ''
-  });
-
-  useEffect(() => {
-    // Capture tracking data when component mounts
-    const urlParams = new URLSearchParams(window.location.search);
-    setTrackingData({
-      timestamp: new Date().toISOString(),
-      utmSource: urlParams.get('utm_source') || '',
-      utmMedium: urlParams.get('utm_medium') || '',
-      utmCampaign: urlParams.get('utm_campaign') || '',
-      utmTerm: urlParams.get('utm_term') || '',
-      utmContent: urlParams.get('utm_content') || '',
-      referrer: document.referrer || '',
-      userAgent: navigator.userAgent || '',
-      pageUrl: window.location.href || ''
-    });
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    if (e.target.type === 'file') {
-      const fileInput = e.target as HTMLInputElement;
-      setFormData(prev => ({
-        ...prev,
-        attachments: fileInput.files
-      }));
-    } else {
-      setFormData(prev => ({
-        ...prev,
-        [e.target.name]: e.target.value
-      }));
-    }
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
   };
-
-  // Let Netlify handle form submission natively - no custom handler needed
 
   const advantages = [
     {
@@ -206,18 +167,13 @@ const ContactPage = () => {
               <form 
                 name="contact-page" 
                 method="POST" 
-                data-netlify="true" 
+                data-netlify="true"
                 encType="multipart/form-data"
+                action="/thank-you"
                 className="space-y-6"
               >
-                {/* Netlify form detection */}
                 <input type="hidden" name="form-name" value="contact-page" />
-                
-                {/* Source tracking */}
                 <input type="hidden" name="source" value="Contact Page Form" />
-                
-                {/* Netlify redirect field */}
-                <input type="hidden" name="_next" value="/thank-you" />
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -310,7 +266,6 @@ const ContactPage = () => {
                     type="file"
                     id="attachments"
                     name="attachments"
-                    onChange={handleChange}
                     multiple
                     accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100"
