@@ -206,7 +206,6 @@ const ContactPage = () => {
               <form 
                 name="contact-page" 
                 method="POST" 
-                action="/thank-you"
                 data-netlify="true" 
                 encType="multipart/form-data"
                 className="space-y-6"
@@ -214,24 +213,11 @@ const ContactPage = () => {
                 {/* Netlify form detection */}
                 <input type="hidden" name="form-name" value="contact-page" />
                 
-                {/* Bot detection */}
-                <div style={{ display: 'none' }}>
-                  <label>
-                    Don't fill this out if you're human: <input name="bot-field" />
-                  </label>
-                </div>
-                
                 {/* Source tracking */}
                 <input type="hidden" name="source" value="Contact Page Form" />
-                <input type="hidden" name="timestamp" value={trackingData.timestamp} />
-                <input type="hidden" name="utm_source" value={trackingData.utmSource} />
-                <input type="hidden" name="utm_medium" value={trackingData.utmMedium} />
-                <input type="hidden" name="utm_campaign" value={trackingData.utmCampaign} />
-                <input type="hidden" name="utm_term" value={trackingData.utmTerm} />
-                <input type="hidden" name="utm_content" value={trackingData.utmContent} />
-                <input type="hidden" name="referrer" value={trackingData.referrer} />
-                <input type="hidden" name="user_agent" value={trackingData.userAgent} />
-                <input type="hidden" name="page_url" value={trackingData.pageUrl} />
+                
+                {/* Netlify redirect field */}
+                <input type="hidden" name="_next" value="/thank-you" />
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
