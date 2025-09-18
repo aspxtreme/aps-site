@@ -11,12 +11,11 @@ const Contact = () => {
     try {
       const response = await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString()
+        body: formData
       });
       
       if (response.ok) {
-        window.location.href = '/thank-you';
+        window.location.href = form.action || '/thank-you';
       } else {
         alert('There was a problem submitting your form. Please try again.');
       }
@@ -85,6 +84,7 @@ const Contact = () => {
               onSubmit={handleSubmit}
               name="homepage-contact"
               method="POST"
+              action="/thank-you"
               encType="multipart/form-data"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
