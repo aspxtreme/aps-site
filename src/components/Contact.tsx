@@ -58,14 +58,15 @@ const Contact = () => {
           </div>
 
           <div className="lg:col-span-2 order-1 lg:order-2">
-            <form 
-              name="homepage-contact" 
-              method="POST" 
+            <form
+              name="homepage-contact"
+              method="POST"
               data-netlify="true"
-              encType="multipart/form-data"
+              data-netlify-honeypot="bot-field"
               action="/thank-you"
               className="bg-slate-50 p-6 sm:p-8 rounded-xl space-y-4 sm:space-y-6 border-2 border-accent-red/20 shadow-lg shadow-accent-red/10"
             >
+              <input type="hidden" name="bot-field" />
               <input type="hidden" name="form-name" value="homepage-contact" />
               <input type="hidden" name="source" value="Homepage Contact Form" />
               

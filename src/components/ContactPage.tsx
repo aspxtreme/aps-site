@@ -44,7 +44,17 @@ const ContactPage = () => {
           <div className="lg:col-span-3 order-1 lg:order-2">
             <div className="bg-white border-2 border-accent-red/20 rounded-xl p-8 shadow-lg shadow-accent-red/10">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Request Your Free Estimate</h2>
-              <form method="POST" data-netlify="true" action="/thank-you" encType="multipart/form-data" name="contactpage-contact">
+              <form
+                name="contactpage-contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                action="/thank-you"
+              >
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="contactpage-contact" />
+                <input type="hidden" name="source" value="Contact Page Form" />
+                
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -54,11 +64,8 @@ const ContactPage = () => {
                       type="text"
                       id="name"
                       name="name"
-                      value={formData.name}
-                      onChange={handleChange}
                       required
-                      disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
                     />
                   </div>
                   <div>
@@ -69,11 +76,8 @@ const ContactPage = () => {
                       type="email"
                       id="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleChange}
                       required
-                      disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
                     />
                   </div>
                 </div>
@@ -87,11 +91,8 @@ const ContactPage = () => {
                       type="tel"
                       id="phone"
                       name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
                       required
-                      disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
                     />
                   </div>
                   <div>
@@ -101,11 +102,8 @@ const ContactPage = () => {
                     <select
                       id="propertyType"
                       name="propertyType"
-                      value={formData.propertyType}
-                      onChange={handleChange}
                       required
-                      disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
                     >
                       <option value="">Select Property Type</option>
                       <option value="commercial">Commercial</option>
@@ -123,13 +121,10 @@ const ContactPage = () => {
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     required
-                    disabled={isSubmitting}
                     rows={5}
                     placeholder="Tell us about your project needs ..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 resize-none"
                   />
                 </div>
 
@@ -143,8 +138,7 @@ const ContactPage = () => {
                     name="attachments"
                     multiple
                     accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
-                    disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100"
                   />
                   <p className="text-sm text-gray-500 mt-2">
                     Accepted formats: JPG, PNG, PDF, DOC, DOCX (Max 10MB per file)
