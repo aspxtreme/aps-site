@@ -206,13 +206,20 @@ const ContactPage = () => {
                 name="contact-page" 
                 method="POST" 
                 data-netlify="true" 
-                action="/thank-you"
+               action="/thank-you"
                 encType="multipart/form-data"
                 onSubmit={handleSubmit} 
                 className="space-y-6"
               >
                 <input type="hidden" name="form-name" value="contact-page" />
                 <input type="hidden" name="source" value="All Star Property Services Website - Contact Page" />
+                
+                {/* Hidden fields for Netlify bot detection */}
+                <div style={{ display: 'none' }}>
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </div>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
