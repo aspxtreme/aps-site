@@ -51,15 +51,8 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    setIsSubmitting(true);
-    
-    // Netlify will handle the form submission
-    // Show success message after a brief delay to simulate processing
-    setTimeout(() => {
-      alert('Thank you! Your message has been sent. We\'ll get back to you within 24-48 hours.');
-      setFormData({ name: '', email: '', phone: '', propertyType: '', message: '', files: null });
-      setIsSubmitting(false);
-    }, 1000);
+    // Don't prevent default - let Netlify handle the form submission
+    // The form will redirect to /thank-you automatically
   };
 
   const contactInfo = [
@@ -122,6 +115,7 @@ const Contact = () => {
               name="homepage-contact" 
               method="POST" 
               data-netlify="true" 
+              action="/thank-you"
               encType="multipart/form-data"
               onSubmit={handleSubmit} 
               className="bg-slate-50 p-8 rounded-xl space-y-6 border-2 border-accent-red/20 shadow-lg shadow-accent-red/10"
