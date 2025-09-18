@@ -7,25 +7,37 @@
   <body>
     <div id="root"></div>
     
-    <!-- Hidden forms for Netlify detection -->
-    <form name="homepage-contact" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+    <!-- Static forms for Netlify detection - MUST match React forms exactly -->
+    <form name="homepage-contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="homepage-contact" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
       <select name="propertyType">
+        <option value="">Select Property Type</option>
         <option value="commercial">Commercial</option>
+        <option value="multi-family">Multi-Family</option>
+        <option value="industrial">Industrial</option>
+        <option value="other">Other</option>
       </select>
       <textarea name="message"></textarea>
       <input type="file" name="attachments" />
       <input type="hidden" name="source" />
     </form>
     
-    <form name="contactpage-contact" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+    <form name="contactpage-contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contactpage-contact" />
       <input type="text" name="name" />
       <input type="email" name="email" />
       <input type="tel" name="phone" />
       <select name="propertyType">
+        <option value="">Select Property Type</option>
         <option value="commercial">Commercial</option>
+        <option value="multi-family">Multi-Family</option>
+        <option value="industrial">Industrial</option>
+        <option value="other">Other</option>
       </select>
       <textarea name="message"></textarea>
       <input type="file" name="attachments" />
