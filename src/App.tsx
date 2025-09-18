@@ -35,6 +35,8 @@ function App() {
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
+          {/* Catch all route - redirect to home if route not found */}
+          <Route path="*" element={<HomePage />} />
         </Routes>
         <Footer />
       </div>
