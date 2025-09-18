@@ -15,7 +15,7 @@ const Contact = () => {
       });
       
       if (response.ok) {
-        window.location.href = form.action || '/thank-you';
+        window.location.href = '/thank-you';
       } else {
         alert('There was a problem submitting your form. Please try again.');
       }
