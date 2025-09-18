@@ -34,7 +34,7 @@ const Header = () => {
           const offsetTop = element.offsetTop - 80;
           window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         }
-      }, 100);
+      }, 200);
       setIsMenuOpen(false);
       return;
     }
