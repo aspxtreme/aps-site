@@ -2,6 +2,29 @@ import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Contact = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString()
+      });
+      
+      if (response.ok) {
+        window.location.href = '/thank-you';
+      } else {
+        alert('There was a problem submitting your form. Please try again.');
+      }
+    } catch (error) {
+      alert('There was a problem submitting your form. Please try again.');
+    }
+  };
+
   const contactInfo = [
     {
       icon: Mail,
@@ -59,12 +82,13 @@ const Contact = () => {
 
           <div className="lg:col-span-2 order-1 lg:order-2">
             <form
+              onSubmit={handleSubmit}
               name="homepage-contact"
               method="POST"
+             action="/thank-you"
               encType="multipart/form-data"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="/thank-you"
               className="bg-slate-50 p-6 sm:p-8 rounded-xl space-y-4 sm:space-y-6 border-2 border-accent-red/20 shadow-lg shadow-accent-red/10"
             >
               <input type="hidden" name="bot-field" />
