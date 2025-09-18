@@ -13,7 +13,8 @@ import {
   Paintbrush,
   Hammer,
   Truck,
-  ArrowRight
+  ArrowRight,
+  Settings
 } from 'lucide-react';
 
 const ServicesPage = () => {
@@ -230,6 +231,7 @@ const ServicesPage = () => {
       <div className="bg-primary-blue py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            <Settings className="w-16 h-16 text-accent-cyan mx-auto mb-6" />
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Services</h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               At All-Star Property Service, we keep your property spotless, safe, and inviting. Whether you're managing commercial buildings, 
