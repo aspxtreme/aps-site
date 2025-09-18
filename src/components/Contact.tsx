@@ -52,7 +52,7 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6 order-2 lg:order-1">
             <h3 className="text-xl lg:text-2xl font-semibold text-gray-900">Contact Information</h3>
             
             {contactInfo.map((info, index) => {
@@ -72,7 +72,7 @@ const Contact = () => {
             })}
           </div>
 
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 order-1 lg:order-2">
             <form 
               name="homepage-contact" 
               method="POST" 

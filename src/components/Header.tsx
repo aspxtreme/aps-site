@@ -52,14 +52,14 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <div className="flex items-end space-x-5">
-              <button onClick={() => navigateToPage('/')} className="flex items-end space-x-5 hover:opacity-80 transition-opacity">
+            <div className="flex items-end space-x-3">
+              <button onClick={() => navigateToPage('/')} className="flex items-end space-x-3 hover:opacity-80 transition-opacity">
                 <img 
                   src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-only-blu-bg.png" 
                   alt="APS Logo" 
                   className="h-6 sm:h-8 md:h-10 w-auto"
                 />
-                <h1 className="text-sm sm:text-lg md:text-2xl font-medium text-white leading-tight tracking-tighter">All-Star Property Service</h1>
+                <h1 className="text-base sm:text-xl md:text-3xl font-medium text-white leading-tight tracking-tighter">All-Star Property Service</h1>
               </button>
             </div>
           </div>
