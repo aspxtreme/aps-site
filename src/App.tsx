@@ -23,6 +23,8 @@ const HomePage = () => (
 );
 
 function App() {
+  console.log('App component loaded'); // Debug log
+
   return (
     <Router>
       <div className="min-h-screen">
@@ -32,11 +34,23 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route 
+            path="/thank-you" 
+            element={
+              <>
+                {console.log('ThankYou route matched')}
+                <ThankYouPage />
+              </>
+            } 
+          />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
-          {/* Catch all route - redirect to home if route not found */}
-          <Route path="*" element={<HomePage />} />
+          <Route path="*" element={
+            <>
+              {console.log('Catch-all route matched for:', window.location.pathname)}
+              <HomePage />
+            </>
+          } />
         </Routes>
         <Footer />
       </div>
