@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - All Star Property Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary-blue': '#181B38',
+              'secondary-blue': '#7BBEDB',
+              'accent-red': '#D62430',
+              'accent-cyan': '#7DFFFC',
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body class="min-h-screen bg-white">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-primary-blue shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex-shrink-0">
+            <div class="flex items-end space-x-5">
+              <a href="/" class="flex items-end space-x-5 hover:opacity-80 transition-opacity">
+                <img 
+                  src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-only-blu-bg.png" 
+                  alt="APS Logo" 
+                  class="h-10 w-auto"
+                />
+                <h1 class="text-3xl font-bold text-white leading-none">All-Star Property Service</h1>
+              </a>
+            </div>
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a href="/" class="text-white hover:text-accent-cyan font-medium transition-colors duration-200">Home</a>
+            <a href="/services" class="text-white hover:text-accent-cyan font-medium transition-colors duration-200">Services</a>
+            <a href="/about" class="text-white hover:text-accent-cyan font-medium transition-colors duration-200">About</a>
+            <a href="/contact" class="text-white hover:text-accent-cyan font-medium transition-colors duration-200">Contact Us</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Thank You Header -->
+    <div class="bg-primary-blue py-16 pt-32">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <!-- Check Circle Icon -->
+          <svg class="w-16 h-16 text-accent-cyan mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <h1 class="text-4xl lg:text-5xl font-bold text-white mb-4">Thank You!</h1>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Your message has been successfully submitted. <br />
+            We'll get back to you within 24-48 hours with your free estimate.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid lg:grid-cols-5 gap-12">
+        
+        <!-- Left Column - Info -->
+        <div class="lg:col-span-2 space-y-8">
+
+          <!-- Services Overview -->
+          <div class="bg-slate-50 p-6 rounded-xl">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Our Professional Services</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+              As a veteran-owned company, we deliver specialized property maintenance with military precision and attention to detail.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-center">
+                <div class="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
+                Trash Chute Repair & Cleaning
+              </li>
+              <li class="flex items-center">
+                <div class="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
+                Professional Window Cleaning
+              </li>
+              <li class="flex items-center">
+                <div class="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
+                Asphalt Striping & Surface Repair
+              </li>
+              <li class="flex items-center">
+                <div class="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
+                Parking Garage Pressure Washing
+              </li>
+              <li class="flex items-center">
+                <div class="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
+                Commercial Handyman Services
+              </li>
+              <li class="flex items-center">
+                <div class="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
+                Plus More Cost-Effective Solutions
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Why Choose APS -->
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-accent-red/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <!-- Clock Icon -->
+                <svg class="w-6 h-6 text-accent-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-2">Rapid Response</h4>
+                <p class="text-gray-600 leading-relaxed">24-48 hour quote turnaround for all service requests</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-secondary-blue/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <!-- Award Icon -->
+                <svg class="w-6 h-6 text-secondary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-2">Certified Professionals</h4>
+                <p class="text-gray-600 leading-relaxed">Licensed contractors with specialized compliance expertise</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-primary-blue/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <!-- Shield Icon -->
+                <svg class="w-6 h-6 text-primary-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-900 mb-2">Veteran Owned</h4>
+                <p class="text-gray-600 leading-relaxed">Military precision and reliability in every service</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="bg-primary-blue p-6 rounded-xl text-white">
+            <h3 class="text-xl font-semibold mb-4">Get In Touch</h3>
+            <div class="space-y-3">
+              <div class="flex items-center space-x-3">
+                <!-- Mail Icon -->
+                <svg class="w-5 h-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <div>
+                  <p class="font-medium">Email</p>
+                  <a href="mailto:quote@allstarpropertyservice.com" class="text-accent-cyan hover:text-white transition-colors">
+                    quote@allstarpropertyservice.com
+                  </a>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <!-- Phone Icon -->
+                <svg class="w-5 h-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                <div>
+                  <p class="font-medium">Phone</p>
+                  <a href="tel:+17146319056" class="text-accent-cyan hover:text-white transition-colors">
+                    (714) 631-9056
+                  </a>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <!-- Map Pin Icon -->
+                <svg class="w-5 h-5 text-accent-cyan flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <div>
+                  <p class="font-medium">Service Areas</p>
+                  <p class="text-gray-300 text-sm leading-relaxed">
+                    Orange County, Los Angeles, Ventura, Santa Barbara, Riverside, San Bernardino, San Diego, Imperial Counties and parts of Kern & San Luis Obispo
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Thank You Message -->
+        <div class="lg:col-span-3">
+          <div class="bg-white border-2 border-accent-red/20 rounded-xl p-8 shadow-lg shadow-accent-red/10">
+            <div class="text-center mb-8">
+              <!-- Large Check Circle Icon -->
+              <svg class="w-20 h-20 text-green-500 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <h2 class="text-3xl font-bold text-gray-900 mb-4">Form Submitted Successfully!</h2>
+              <p class="text-xl text-gray-600 leading-relaxed mb-6">
+                Thank you for contacting All-Star Property Service. Your request has been received and we appreciate your interest in our professional property services.
+              </p>
+            </div>
+
+            <div class="bg-slate-50 p-6 rounded-xl mb-8">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">What Happens Next?</h3>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <div class="w-8 h-8 bg-accent-red text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Review</h4>
+                    <p class="text-gray-600">Our team will carefully review your project details and requirements.</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-8 h-8 bg-accent-red text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Contact</h4>
+                    <p class="text-gray-600">We'll reach out within 24-48 hours to schedule your free inspection.</p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-8 h-8 bg-accent-red text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Estimate</h4>
+                    <p class="text-gray-600">After inspection, you'll receive a detailed, fair-priced estimate.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <p class="text-lg text-gray-700 mb-4">
+                Need immediate assistance? Don't hesitate to call us directly:
+              </p>
+              <a 
+                href="tel:+17146319056" 
+                class="inline-flex items-center justify-center px-6 py-3 bg-accent-red text-white font-semibold rounded-lg hover:bg-accent-cyan hover:text-primary-blue transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              >
+                <!-- Phone Icon -->
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                (714) 631-9056
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary-blue text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+          <div class="md:col-span-2">
+            <img 
+              src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-stack-blu-bg.png" 
+              alt="All Star Property Services Logo" 
+              class="h-40 w-auto"
+            />
+            <div class="text-secondary-blue leading-relaxed mb-6 max-w-md">
+              <p>www.allstarpropertyservice.com</p>
+              <p class="text-accent-cyan font-semibold">"Veteran Owned Company"</p>
+            </div>
+            <p class="text-white leading-relaxed max-w-md">
+              Professional property services and facility maintenance for commercial and multi-family real estate. 
+              Reliable and Compliant. Always Fair Prices. Never Any Fluff.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Services</h4>
+            <ul class="space-y-3 text-white text-sm">
+              <li>Trash Chute Repair & Cleaning</li>
+              <li>Professional Window Cleaning</li>
+              <li>Asphalt Striping & Surface Repair</li>
+              <li>Parking Garage Pressure Washing</li>
+              <li>Commercial Handyman Services</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Industries</h4>
+            <ul class="space-y-3 text-white text-sm">
+              <li>Commercial Properties</li>
+              <li>Multi-Family Housing</li>
+              <li>Industrial Facilities</li>
+              <li>Office Buildings</li>
+              <li>Retail Centers</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-secondary-blue/30 pt-8 text-center">
+          <p class="text-white">
+            &copy; 2025 All Star Property Services, Inc. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

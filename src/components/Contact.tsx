@@ -122,13 +122,6 @@ const Contact = () => {
             >
               <input type="hidden" name="form-name" value="homepage-contact" />
               <input type="hidden" name="source" value="All Star Property Services Website - Homepage" />
-              <input type="hidden" name="timestamp" value={trackingData.timestamp} />
-              <input type="hidden" name="utm_source" value={trackingData.utmSource} />
-              <input type="hidden" name="utm_medium" value={trackingData.utmMedium} />
-              <input type="hidden" name="utm_campaign" value={trackingData.utmCampaign} />
-              <input type="hidden" name="utm_term" value={trackingData.utmTerm} />
-              <input type="hidden" name="utm_content" value={trackingData.utmContent} />
-              <input type="hidden" name="referrer" value={trackingData.referrer} />
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
