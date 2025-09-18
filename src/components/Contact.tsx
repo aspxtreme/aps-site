@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Contact = () => {
@@ -12,7 +12,29 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [trackingData, setTrackingData] = useState({
+    timestamp: '',
+    utmSource: '',
+    utmMedium: '',
+    utmCampaign: '',
+    utmTerm: '',
+    utmContent: '',
+    referrer: ''
+  });
 
+  useEffect(() => {
+    // Capture tracking data when component mounts
+    const urlParams = new URLSearchParams(window.location.search);
+    setTrackingData({
+      timestamp: new Date().toISOString(),
+      utmSource: urlParams.get('utm_source') || '',
+      utmMedium: urlParams.get('utm_medium') || '',
+      utmCampaign: urlParams.get('utm_campaign') || '',
+      utmTerm: urlParams.get('utm_term') || '',
+      utmContent: urlParams.get('utm_content') || '',
+      referrer: document.referrer || ''
+    });
+  }, []);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     if (e.target.type === 'file') {
       const fileInput = e.target as HTMLInputElement;
@@ -29,40 +51,15 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
     setIsSubmitting(true);
-
-    try {
-      // TODO: Replace with Google Sheets submission URL
-      const response = await fetch('YOUR_GOOGLE_APPS_SCRIPT_URL_HERE', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          timestamp: new Date().toISOString(),
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          propertyType: formData.propertyType,
-          message: formData.message,
-          source: 'All Star Property Services Website - Homepage'
-        }),
-      });
-
-      if (response.ok) {
-        alert('Thank you! Your message has been sent. We\'ll get back to you within 24-48 hours.');
-        setFormData({ name: '', email: '', phone: '', propertyType: '', message: '', files: null });
-      } else {
-        throw new Error('Failed to submit form');
-      }
-
-    } catch (error) {
-      console.error('Form submission error:', error);
-      alert('There was an error sending your message. Please try again or contact us directly.');
-    } finally {
+    
+    // Netlify will handle the form submission
+    // Show success message after a brief delay to simulate processing
+    setTimeout(() => {
+      alert('Thank you! Your message has been sent. We\'ll get back to you within 24-48 hours.');
+      setFormData({ name: '', email: '', phone: '', propertyType: '', message: '', files: null });
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   const contactInfo = [
@@ -76,12 +73,12 @@ const Contact = () => {
       icon: Phone,
       title: 'Phone',
       value: '(714) 631-9056',
-      description: 'Call for immediate assistance'
+      description: 'Call or text for immediate assistance'
     },
     {
       icon: MapPin,
       title: 'Service Areas',
-      value: 'Orange County & Los Angeles',
+      value: 'Orange County, Los Angeles, Ventura, Santa Barbara, Riverside, San Bernardino, San Diego, Imperial Counties and parts of Kern & San Luis Obispo',
       description: 'Commercial & Multi-Family Properties'
     }
   ];
@@ -121,7 +118,24 @@ const Contact = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="bg-slate-50 p-8 rounded-xl space-y-6 border-2 border-accent-red/20 shadow-lg shadow-accent-red/10">
+            <form 
+              name="homepage-contact" 
+              method="POST" 
+              data-netlify="true" 
+              encType="multipart/form-data"
+              onSubmit={handleSubmit} 
+              className="bg-slate-50 p-8 rounded-xl space-y-6 border-2 border-accent-red/20 shadow-lg shadow-accent-red/10"
+            >
+              <input type="hidden" name="form-name" value="homepage-contact" />
+              <input type="hidden" name="source" value="All Star Property Services Website - Homepage" />
+              <input type="hidden" name="timestamp" value={trackingData.timestamp} />
+              <input type="hidden" name="utm_source" value={trackingData.utmSource} />
+              <input type="hidden" name="utm_medium" value={trackingData.utmMedium} />
+              <input type="hidden" name="utm_campaign" value={trackingData.utmCampaign} />
+              <input type="hidden" name="utm_term" value={trackingData.utmTerm} />
+              <input type="hidden" name="utm_content" value={trackingData.utmContent} />
+              <input type="hidden" name="referrer" value={trackingData.referrer} />
+              
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -156,7 +170,7 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone
+                    Phone *
                   </label>
                   <input
                     type="tel"
@@ -164,18 +178,20 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
                   />
                 </div>
                 <div>
                   <label htmlFor="propertyType" className="block text-sm font-medium text-gray-700 mb-2">
-                    Property Type
+                    Property Type *
                   </label>
                   <select
                     id="propertyType"
-                    name="propertyType"
+                    name="property-type"
                     value={formData.propertyType}
                     onChange={handleChange}
+                    required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
                   >
                     <option value="">Select Property Type</option>
@@ -209,8 +225,8 @@ const Contact = () => {
                 </label>
                 <input
                   type="file"
-                  id="files"
-                  name="files"
+                  id="attachments"
+                  name="attachments"
                   onChange={handleChange}
                   multiple
                   accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"

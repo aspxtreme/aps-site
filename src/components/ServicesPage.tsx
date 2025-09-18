@@ -28,7 +28,6 @@ const ServicesPage = () => {
   const galleryImages = [
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/red-curb-paint.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/asphalt-striping.jpg',
-    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/red-curb-stencil-no-parking.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/curb-restoration.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/pressure-wash-building.jpg',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/stairs-pressure-washing.jpg',
@@ -36,7 +35,13 @@ const ServicesPage = () => {
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/asphalt-striping.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/pressure-washing.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/trash-chute-cleaning.png',
-    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/window-washing.png'
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/window-washing.png',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-solar-cleaning.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-roof-replacement.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-floor-care.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-roof-coating.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-epoxy-floor-coating.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-oprofessional-waterproofing.jpg'
   ];
 
   // State for rotating images in 4 boxes

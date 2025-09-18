@@ -5,14 +5,18 @@ const ImageCarousel = () => {
   const images = [
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/asphalt-striping.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/pressure-washing.png',
-    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/repair-main.png',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-valet-restoration.jpg',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/striping-surface.jpg',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/trash-chute-animation.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/trash-chute-cleaning.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/trash-chute-product-close.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/trash-chute-product.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/trash-chute.png',
-    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/window-cleaning.jpg'
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/window-cleaning.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-solar-cleaning.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-floor-care.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-epoxy-floor-coating.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-oprofessional-waterproofing.jpg'
   ];
 
   // Log the original images array with indices

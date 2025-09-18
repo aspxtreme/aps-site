@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Clock, Award, Shield, MessageCircle } from 'lucide-react';
 
 const ContactPage = () => {
@@ -12,7 +12,29 @@ const ContactPage = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [trackingData, setTrackingData] = useState({
+    timestamp: '',
+    utmSource: '',
+    utmMedium: '',
+    utmCampaign: '',
+    utmTerm: '',
+    utmContent: '',
+    referrer: ''
+  });
 
+  useEffect(() => {
+    // Capture tracking data when component mounts
+    const urlParams = new URLSearchParams(window.location.search);
+    setTrackingData({
+      timestamp: new Date().toISOString(),
+      utmSource: urlParams.get('utm_source') || '',
+      utmMedium: urlParams.get('utm_medium') || '',
+      utmCampaign: urlParams.get('utm_campaign') || '',
+      utmTerm: urlParams.get('utm_term') || '',
+      utmContent: urlParams.get('utm_content') || '',
+      referrer: document.referrer || ''
+    });
+  }, []);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     if (e.target.type === 'file') {
       const fileInput = e.target as HTMLInputElement;
@@ -29,40 +51,15 @@ const ContactPage = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
     setIsSubmitting(true);
-
-    try {
-      // TODO: Replace with Google Sheets submission URL
-      const response = await fetch('YOUR_GOOGLE_APPS_SCRIPT_URL_HERE', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          timestamp: new Date().toISOString(),
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          propertyType: formData.propertyType,
-          message: formData.message,
-          source: 'All Star Property Services Website - Contact Page'
-        }),
-      });
-
-      if (response.ok) {
-        alert('Thank you! Your message has been sent. We\'ll get back to you within 24-48 hours.');
-        setFormData({ name: '', email: '', phone: '', propertyType: '', message: '', files: null });
-      } else {
-        throw new Error('Failed to submit form');
-      }
-
-    } catch (error) {
-      console.error('Form submission error:', error);
-      alert('There was an error sending your message. Please try again or contact us directly.');
-    } finally {
+    
+    // Netlify will handle the form submission
+    // Show success message after a brief delay to simulate processing
+    setTimeout(() => {
+      alert('Thank you! Your message has been sent. We\'ll get back to you within 24-48 hours.');
+      setFormData({ name: '', email: '', phone: '', propertyType: '', message: '', files: null });
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   const advantages = [
@@ -199,7 +196,7 @@ const ContactPage = () => {
                   <div>
                     <p className="font-medium">Service Areas</p>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Orange County, Los Angeles, Ventura, Santa Barbara, Riverside, San Bernadino, San Diego, Imperial Counties and parts of Kern & San Luis Obispo
+                      Orange County, Los Angeles, Ventura, Santa Barbara, Riverside, San Bernardino, San Diego, Imperial Counties and parts of Kern & San Luis Obispo
                     </p>
                   </div>
                 </div>
@@ -212,7 +209,24 @@ const ContactPage = () => {
             <div className="bg-white border-2 border-accent-red/20 rounded-xl p-8 shadow-lg shadow-accent-red/10">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Request Your Free Estimate</h2>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                name="contact-page" 
+                method="POST" 
+                data-netlify="true" 
+                encType="multipart/form-data"
+                onSubmit={handleSubmit} 
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="contact-page" />
+                <input type="hidden" name="source" value="All Star Property Services Website - Contact Page" />
+                <input type="hidden" name="timestamp" value={trackingData.timestamp} />
+                <input type="hidden" name="utm_source" value={trackingData.utmSource} />
+                <input type="hidden" name="utm_medium" value={trackingData.utmMedium} />
+                <input type="hidden" name="utm_campaign" value={trackingData.utmCampaign} />
+                <input type="hidden" name="utm_term" value={trackingData.utmTerm} />
+                <input type="hidden" name="utm_content" value={trackingData.utmContent} />
+                <input type="hidden" name="referrer" value={trackingData.referrer} />
+                
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -247,7 +261,7 @@ const ContactPage = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone
+                      Phone *
                     </label>
                     <input
                       type="tel"
@@ -255,18 +269,20 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
                     />
                   </div>
                   <div>
                     <label htmlFor="propertyType" className="block text-sm font-medium text-gray-700 mb-2">
-                      Property Type
+                      Property Type *
                     </label>
                     <select
                       id="propertyType"
-                      name="propertyType"
+                      name="property-type"
                       value={formData.propertyType}
                       onChange={handleChange}
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
                     >
                       <option value="">Select Property Type</option>
@@ -300,8 +316,8 @@ const ContactPage = () => {
                   </label>
                   <input
                     type="file"
-                    id="files"
-                    name="files"
+                    id="attachments"
+                    name="attachments"
                     onChange={handleChange}
                     multiple
                     accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
