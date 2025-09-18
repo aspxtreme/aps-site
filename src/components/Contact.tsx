@@ -61,6 +61,7 @@ const Contact = () => {
             <form
               name="homepage-contact"
               method="POST"
+             action="/thank-you"
               action="/thank-you"
              action="/thank-you"
              enctype="multipart/form-data"
