@@ -8,10 +8,9 @@ const Contact = () => {
     phone: '',
     propertyType: '',
     message: '',
-    files: null as FileList | null
+    attachments: null as FileList | null
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [trackingData, setTrackingData] = useState({
     timestamp: '',
     utmSource: '',
@@ -19,7 +18,9 @@ const Contact = () => {
     utmCampaign: '',
     utmTerm: '',
     utmContent: '',
-    referrer: ''
+    referrer: '',
+    userAgent: '',
+    pageUrl: ''
   });
 
   useEffect(() => {
@@ -32,15 +33,18 @@ const Contact = () => {
       utmCampaign: urlParams.get('utm_campaign') || '',
       utmTerm: urlParams.get('utm_term') || '',
       utmContent: urlParams.get('utm_content') || '',
-      referrer: document.referrer || ''
+      referrer: document.referrer || '',
+      userAgent: navigator.userAgent || '',
+      pageUrl: window.location.href || ''
     });
   }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     if (e.target.type === 'file') {
       const fileInput = e.target as HTMLInputElement;
       setFormData(prev => ({
         ...prev,
-        files: fileInput.files
+        attachments: fileInput.files
       }));
     } else {
       setFormData(prev => ({
@@ -50,10 +54,7 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    // Don't prevent default - let Netlify handle the form submission
-    // The form will redirect to /thank-you automatically
-  };
+  // Let Netlify handle form submission natively - no custom handler needed
 
   const contactInfo = [
     {
@@ -114,21 +115,32 @@ const Contact = () => {
             <form 
               name="homepage-contact" 
               method="POST" 
+              action="/thank-you"
               data-netlify="true" 
-             action="/thank-you"
               encType="multipart/form-data"
-              onSubmit={handleSubmit} 
               className="bg-slate-50 p-8 rounded-xl space-y-6 border-2 border-accent-red/20 shadow-lg shadow-accent-red/10"
             >
+              {/* Netlify form detection */}
               <input type="hidden" name="form-name" value="homepage-contact" />
-              <input type="hidden" name="source" value="All Star Property Services Website - Homepage" />
               
-              {/* Hidden fields for Netlify bot detection */}
+              {/* Bot detection */}
               <div style={{ display: 'none' }}>
                 <label>
                   Don't fill this out if you're human: <input name="bot-field" />
                 </label>
               </div>
+              
+              {/* Source tracking */}
+              <input type="hidden" name="source" value="Homepage Contact Form" />
+              <input type="hidden" name="timestamp" value={trackingData.timestamp} />
+              <input type="hidden" name="utm_source" value={trackingData.utmSource} />
+              <input type="hidden" name="utm_medium" value={trackingData.utmMedium} />
+              <input type="hidden" name="utm_campaign" value={trackingData.utmCampaign} />
+              <input type="hidden" name="utm_term" value={trackingData.utmTerm} />
+              <input type="hidden" name="utm_content" value={trackingData.utmContent} />
+              <input type="hidden" name="referrer" value={trackingData.referrer} />
+              <input type="hidden" name="user_agent" value={trackingData.userAgent} />
+              <input type="hidden" name="page_url" value={trackingData.pageUrl} />
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -214,7 +226,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="files" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="attachments" className="block text-sm font-medium text-gray-700 mb-2">
                   Attach Photos or Documents (Optional)
                 </label>
                 <input
@@ -224,7 +236,7 @@ const Contact = () => {
                   onChange={handleChange}
                   multiple
                   accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100"
                 />
                 <p className="text-sm text-gray-500 mt-2">
                   Accepted formats: JPG, PNG, PDF, DOC, DOCX (Max 10MB per file)
@@ -233,14 +245,9 @@ const Contact = () => {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className={`w-full py-4 px-8 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl ${
-                  isSubmitting
-                    ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-accent-red hover:bg-accent-cyan hover:text-[#181B38]'
-                } text-white`}
+                className="w-full py-4 px-8 bg-accent-red hover:bg-accent-cyan hover:text-[#181B38] text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                {isSubmitting ? 'Sending...' : 'Get Estimate Today'}
+                Get Estimate Today
               </button>
             </form>
           </div>
