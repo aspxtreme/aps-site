@@ -59,7 +59,7 @@ const Header = () => {
                   alt="APS Logo" 
                   className="h-6 sm:h-8 md:h-10 w-auto"
                 />
-                <h1 className="text-base sm:text-xl md:text-3xl font-medium text-white leading-tight tracking-tighter">All-Star Property Service</h1>
+                <h1 className="text-lg sm:text-xl md:text-3xl font-medium text-white leading-tight tracking-tighter">All-Star Property Service</h1>
               </button>
             </div>
           </div>
