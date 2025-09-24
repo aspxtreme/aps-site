@@ -55,7 +55,7 @@ const Header = () => {
             <div className="flex items-end space-x-3">
               <button onClick={() => navigateToPage('/')} className="flex items-end space-x-3 hover:opacity-80 transition-opacity">
                 <img 
-                  src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-only-blu-bg.png" 
+                  src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-APS-color-NEW.png" 
                   alt="APS Logo" 
                   className="h-6 sm:h-8 md:h-10 w-auto"
                 />
@@ -69,32 +69,64 @@ const Header = () => {
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group text-sm lg:text-base"
+                className={`font-medium transition-colors duration-200 relative group text-sm lg:text-base ${
+                  location.pathname === '/' 
+                    ? 'text-accent-cyan' 
+                    : 'text-white hover:text-accent-cyan'
+                }`}
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent-cyan transition-all duration-300 ${
+                  location.pathname === '/' 
+                    ? 'w-full' 
+                    : 'w-0 group-hover:w-full'
+                }`}></span>
               </button>
             ))}
             <button
               onClick={() => navigateToPage('/services')}
-              className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group text-sm lg:text-base"
+              className={`font-medium transition-colors duration-200 relative group text-sm lg:text-base ${
+                location.pathname === '/services' 
+                  ? 'text-accent-cyan' 
+                  : 'text-white hover:text-accent-cyan'
+              }`}
             >
               Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent-cyan transition-all duration-300 ${
+                location.pathname === '/services' 
+                  ? 'w-full' 
+                  : 'w-0 group-hover:w-full'
+              }`}></span>
             </button>
             <button
               onClick={() => navigateToPage('/about')}
-              className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group text-sm lg:text-base"
+              className={`font-medium transition-colors duration-200 relative group text-sm lg:text-base ${
+                location.pathname === '/about' 
+                  ? 'text-accent-cyan' 
+                  : 'text-white hover:text-accent-cyan'
+              }`}
             >
               About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent-cyan transition-all duration-300 ${
+                location.pathname === '/about' 
+                  ? 'w-full' 
+                  : 'w-0 group-hover:w-full'
+              }`}></span>
             </button>
             <button
               onClick={() => navigateToPage('/contact')}
-              className="text-white hover:text-accent-cyan font-medium transition-colors duration-200 relative group text-sm lg:text-base"
+              className={`font-medium transition-colors duration-200 relative group text-sm lg:text-base ${
+                location.pathname === '/contact' 
+                  ? 'text-accent-cyan' 
+                  : 'text-white hover:text-accent-cyan'
+              }`}
             >
               Contact Us
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-cyan transition-all duration-300 group-hover:w-full"></span>
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-accent-cyan transition-all duration-300 ${
+                location.pathname === '/contact' 
+                  ? 'w-full' 
+                  : 'w-0 group-hover:w-full'
+              }`}></span>
             </button>
           </nav>
 
@@ -113,26 +145,42 @@ const Header = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block w-full text-left px-4 py-2 text-white hover:bg-white/10 hover:text-accent-cyan rounded-lg transition-colors duration-200"
+                  className={`block w-full text-left px-4 py-2 rounded-lg transition-colors duration-200 ${
+                    location.pathname === '/' 
+                      ? 'text-accent-cyan bg-white/10' 
+                      : 'text-white hover:bg-white/10 hover:text-accent-cyan'
+                  }`}
                 >
                   {item}
                 </button>
               ))}
               <button
                 onClick={() => navigateToPage('/services')}
-                className="block w-full text-left px-4 py-2 text-white hover:bg-white/10 hover:text-accent-cyan rounded-lg transition-colors duration-200"
+                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors duration-200 ${
+                  location.pathname === '/services' 
+                    ? 'text-accent-cyan bg-white/10' 
+                    : 'text-white hover:bg-white/10 hover:text-accent-cyan'
+                }`}
               >
                 Services
               </button>
               <button
                 onClick={() => navigateToPage('/about')}
-                className="block w-full text-left px-4 py-2 text-white hover:bg-white/10 hover:text-accent-cyan rounded-lg transition-colors duration-200"
+                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors duration-200 ${
+                  location.pathname === '/about' 
+                    ? 'text-accent-cyan bg-white/10' 
+                    : 'text-white hover:bg-white/10 hover:text-accent-cyan'
+                }`}
               >
                 About
               </button>
               <button
                 onClick={() => navigateToPage('/contact')}
-                className="block w-full text-left px-4 py-2 text-white hover:bg-white/10 hover:text-accent-cyan rounded-lg transition-colors duration-200"
+                className={`block w-full text-left px-4 py-2 rounded-lg transition-colors duration-200 ${
+                  location.pathname === '/contact' 
+                    ? 'text-accent-cyan bg-white/10' 
+                    : 'text-white hover:bg-white/10 hover:text-accent-cyan'
+                }`}
               >
                 Contact Us
               </button>

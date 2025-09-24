@@ -117,7 +117,7 @@ const Services = () => {
                 <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-4 lg:mb-6">
                   <Icon className="w-8 h-8 text-secondary-blue" />
                 </div>
-                <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                <h3 className="text-lg lg:text-xl font-semibold text-primary-blue mb-3">{service.title}</h3>
                 <p className="text-sm lg:text-base text-gray-600 mb-4 lg:mb-6 leading-relaxed">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (
@@ -143,7 +143,7 @@ const Services = () => {
                 <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-4 lg:mb-6">
                   <Icon className="w-8 h-8 text-secondary-blue" />
                 </div>
-                <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                <h3 className="text-lg lg:text-xl font-semibold text-primary-blue mb-3">{service.title}</h3>
                 <p className="text-sm lg:text-base text-gray-600 mb-4 lg:mb-6 leading-relaxed">{service.description}</p>
                 <ul className="space-y-2">
                   {service.features.map((feature, idx) => (

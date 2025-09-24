@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Shield, Phone, Mail, Building2 } from 'lucide-react';
+import { Shield, Phone, Mail, Building2, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -13,11 +13,11 @@ const Footer = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="sm:col-span-2 lg:col-span-2">
             <img 
-              src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-stack-blu-bg.png" 
+              src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-full-color-NEW-bold.png" 
               alt="All Star Property Services Logo" 
               className="h-32 sm:h-40 w-auto"
             />
-            <div className="text-secondary-blue leading-relaxed mb-6 max-w-md">
+            <div className="text-secondary-blue leading-relaxed mb-2 max-w-md">
               <p>www.allstarpropertyservice.com</p>
               <p className="text-accent-cyan font-semibold">"Veteran Owned Company"</p>
             </div>
@@ -37,6 +37,17 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Building2 className="w-5 h-5 text-white" />
                 <span className="text-sm sm:text-base text-white">14092 Willow Ln, Suite A<br />Westminster, CA 92683</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Linkedin className="w-5 h-5 text-white" />
+                <a 
+                  href="https://www.linkedin.com/company/all-star-property-service/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-sm sm:text-base text-white hover:text-accent-cyan transition-colors duration-200"
+                >
+                  LinkedIn
+                </a>
               </div>
             </div>
           </div>
@@ -65,7 +76,7 @@ const Footer = () => {
           </div>
 
           <div className="sm:col-span-1">
-            <h4 className="text-base sm:text-lg font-semibold mb-6">Industries</h4>
+            <h4 className="text-base sm:text-lg font-semibold mb-6">Facilities</h4>
             <ul className="space-y-3 text-sm sm:text-base text-white">
               <li>Commercial Properties</li>
               <li>Multi-Family Housing</li>

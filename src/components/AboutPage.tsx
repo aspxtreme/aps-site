@@ -60,7 +60,7 @@ const AboutPage = () => {
         <div className="mb-20">
           <div className="space-y-8 mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
+              <h2 className="text-3xl font-bold text-accent-red mb-6">Our Story</h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
                 APS was founded on the belief that property managers deserve true partners, not vendors. Whether it's chute repairs, compliance inspections, cleaning, or maintenance, our approach is always the same: professional results you can trust, delivered at a fair price.
               </p>
@@ -122,7 +122,7 @@ const AboutPage = () => {
         {/* Core Values */}
         <div className="mb-20">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-blue mb-4">Our Core Values</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-6">
               Property and facility managers carry an impossible burden. You're judged on keeping everything spotless, safe, and compliant — but the service partners you have to rely on can make your job even more difficult. Having to constantly follow-up and manage details can feel like you're doing their job, instead of yours.
             </p>
@@ -157,9 +157,9 @@ const AboutPage = () => {
             {/* Logo card - static, no flip */}
             <div className="bg-primary-blue rounded-xl shadow-lg h-64 flex items-center justify-center p-8">
               <img 
-                src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-stack-blu-bg.png" 
+                src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-full-color-NEW-bold.png" 
                 alt="All Star Property Services Logo" 
-                className="max-w-full max-h-full object-contain"
+                className="max-w-full max-h-full object-contain transform scale-125"
               />
             </div>
           </div>

@@ -11,14 +11,25 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="pt-16 bg-primary-blue min-h-screen flex items-center">
+    <section id="home" className="pt-16 bg-gradient-to-r from-primary-blue via-primary-blue to-secondary-blue min-h-screen flex items-center relative overflow-hidden rounded-b-xl">
+      {/* Gradient Overlay for Extra Depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/90 via-transparent to-accent-cyan/20"></div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20 lg:py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 lg:pt-8 lg:pb-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8 relative z-10">
             <div className="space-y-4">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
-                Professional Property Services with a Mission
-              </h1>
+              <div className="space-y-2">
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-accent-cyan">
+                  Professional Property Services
+                </h1>
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-none space-y-1">
+                  <div className="text-white">Disciplined.</div>
+                  <div className="text-accent-cyan">Reliable.</div>
+                  <div className="text-white">Fair.</div>
+                </div>
+              </div>
               <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed">
                 APS brings discipline, compliance, and follow-through to every service. Our clients have worked with us for decades because we offer great communication and exceptional service, always at a fair price.
               </p>
@@ -50,7 +61,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative animate-fade-in-up">
+          <div className="relative animate-fade-in-up z-10">
             <div className="rounded-2xl overflow-hidden shadow-2xl animate-float">
               <img 
                 src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/trash-chute-cleaning.png" 
@@ -71,6 +82,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

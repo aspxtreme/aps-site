@@ -292,7 +292,7 @@ const ServicesPage = () => {
       <div className="py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-blue mb-4">
               Some of Our Services
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -308,7 +308,7 @@ const ServicesPage = () => {
                   <div className="w-16 h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-6">
                     <Icon className="w-8 h-8 text-secondary-blue" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
+                  <h3 className="text-xl font-semibold text-primary-blue mb-4">{service.title}</h3>
                   <ul className="space-y-3">
                     {service.features.map((feature, idx) => {
                       const [title, description] = feature.split(' - ');

@@ -65,7 +65,7 @@ const ContactPage = () => {
           {/* Right Column - Form */}
           <div className="lg:col-span-3 order-1 lg:order-2">
             <div className="bg-white border-2 border-accent-red/20 rounded-xl p-8 shadow-lg shadow-accent-red/10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Request Your Free Estimate</h2>
+              <h2 className="text-2xl font-bold text-accent-red mb-6 text-center">Request Your Free Estimate</h2>
               <form
                 onSubmit={handleSubmit}
                 name="contactpage-contact"
@@ -184,7 +184,7 @@ const ContactPage = () => {
 
             {/* Services Overview */}
             <div className="bg-slate-50 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Professional Services</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Professional Services</h3>
               <p className="text-gray-600 mb-4 leading-relaxed">
                 We offer professional property services and facility maintenance for commercial and multi-family real estate. Reliable and Compliant. Always Fair Prices. Never Any Fluff.
               </p>
@@ -240,7 +240,7 @@ const ContactPage = () => {
                       <Icon className={`w-6 h-6 ${iconColor}`} />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">{advantage.title}</h4>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-0">{advantage.title}</h4>
                       <p className="text-gray-600 leading-relaxed">{advantage.description}</p>
                     </div>
                   </div>
