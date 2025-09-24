@@ -15,8 +15,7 @@ const Hero = () => {
       {/* Gradient Overlay for Extra Depth */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-blue/90 via-transparent to-accent-cyan/20"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20 lg:py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 lg:pt-8 lg:pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12 lg:pt-6 lg:pb-12">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-8 relative z-10">
             <div className="space-y-4">
@@ -82,7 +81,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
       </div>
     </section>
   );
