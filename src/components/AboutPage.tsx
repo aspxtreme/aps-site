@@ -45,10 +45,9 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Flag className="w-16 h-16 text-accent-cyan mx-auto mb-6" />
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">About All-Star Property Service</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">About Us</h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              APS was founded on discipline, reliability, and the belief that property managers deserve true partners, not vendors. 
-              As a veteran-owned business, we apply the lessons of military precision — planning, execution, and accountability — to every service we provide.
+              As a veteran-owned business, we apply the lessons of military precision — planning, execution, and accountability — to every professional property service we provide. At APS, we promise to keep your property spotless, safe, and inviting.
             </p>
           </div>
         </div>
@@ -63,8 +62,7 @@ const AboutPage = () => {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
               <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                After decades of experience in the property services industry, APS was created to eliminate the overhead, 
-                fluff, and poor follow-through that plague so many competitors. Instead, we focus on what matters:
+                APS was founded on the belief that property managers deserve true partners, not vendors. Whether it's chute repairs, compliance inspections, cleaning, or maintenance, our approach is always the same: professional results you can trust, delivered at a fair price.
               </p>
               <ul className="text-lg text-gray-700 space-y-2">
                 <li className="flex items-center">
@@ -185,7 +183,7 @@ const AboutPage = () => {
           <div className="relative z-10 text-center">
             <h2 className="text-3xl font-bold text-primary-blue mb-6">Your Dependable Partner</h2>
             <p className="text-xl text-gray-900 leading-relaxed mb-6 max-w-4xl mx-auto">
-              For more than a decade, our "All-Star" professional property services team has served as the chosen partner of top property management firms and commercial real estate owners because APS is always reliable, fair and disciplined.
+              For more than a decade, our "All-Star" professional property services team has served as the chosen partner of top property management firms and commercial real estate owners because APS is always reliable and fair.
             </p>
             <p className="text-xl text-gray-900 leading-relaxed mb-4 max-w-3xl mx-auto">
               With APS, you can say goodbye to missed deadlines, sloppy work and inflated invoices. And say hello to project precision and attention to detail.

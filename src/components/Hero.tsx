@@ -20,8 +20,7 @@ const Hero = () => {
                 Professional Property Services with a Mission
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed">
-                Specialized building maintenance and repair services for commercial and multi-family properties. 
-                Professional results from a veteran-owned company with military precision.
+                APS brings discipline, compliance, and follow-through to every service. Our clients have worked with us for decades because we offer great communication and exceptional service, always at a fair price.
               </p>
             </div>
 

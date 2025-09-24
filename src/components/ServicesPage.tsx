@@ -234,8 +234,7 @@ const ServicesPage = () => {
             <Settings className="w-16 h-16 text-accent-cyan mx-auto mb-6" />
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Services</h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              At All-Star Property Service, we keep your property spotless, safe, and inviting. Whether you're managing commercial buildings, 
-              multi-unit properties, or high-end facilities, we deliver excellence across a wide range of services. 
+              Whether you're managing commercial buildings, multi-unit properties, or high-end facilities, we deliver excellence across a wide range of services. 
               Every service is backed by top-quality equipment, trained staff, and the APS promise of reliability and satisfaction.
             </p>
           </div>
@@ -277,8 +276,7 @@ const ServicesPage = () => {
                 worry about compliance details.
               </p>
               <p>
-                That's where we come in. As a veteran-owned company, APS brings discipline, precision, and follow-through 
-                to every service. We handle the work behind the scenes — the cleaning, repairs, inspections, and maintenance 
+                That's where we come in. APS brings discipline and follow-through to every professional property cleaning, repair and restoration service. We handle the work behind the scenes — the cleaning, repairs, inspections, and maintenance 
                 that keep everything running smoothly.
               </p>
               <p className="text-xl font-semibold text-primary-blue">
@@ -334,7 +332,7 @@ const ServicesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose APS
+              Why Choose APS?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Professional service delivery backed by military precision and veteran values.

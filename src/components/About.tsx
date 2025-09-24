@@ -33,11 +33,10 @@ const About = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Why Choose All-Star Property Services
+                Why Choose All-Star Property Service
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed">
-                As a veteran-owned company, we deliver professional property services with military precision, 
-                focusing on reliable solutions, regulatory compliance, and fair pricing.
+                APS brings decades of professional property services experience to each and every one of your jobs. Property management professionals, LCAMs and owner-operators count on the All-Star team for our steadfast commitment to on-time, on-budget services.
               </p>
             </div>
 
@@ -84,10 +83,10 @@ const About = () => {
         <div className="mt-12 lg:mt-20 bg-primary-blue rounded-2xl p-6 sm:p-8 lg:p-12 shadow-lg">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Our Approach</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">Our Disciplined Approach</h3>
               <p className="text-base sm:text-lg lg:text-xl text-white leading-relaxed">
-                With military discipline and attention to detail, we focus on direct customer needs, professional 
-                inspections, competitive quoting, and reliable service completion.
+                With strict attention to detail, we focus on direct customer needs, professional 
+                inspections, competitive quoting, and reliable service completion. We'll make sure your job gets done properly, on time, and is ready to pass inspection.
               </p>
             </div>
 
@@ -124,7 +123,7 @@ const About = () => {
                   <div className="flex items-start space-x-4">
                     <div className="w-2 h-2 bg-accent-cyan rounded-full mt-3 flex-shrink-0"></div>
                     <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
-                      So say goodbye to missed deadlines, sloppy work and inflated invoices. And say hello to project precision and attention to detail.
+                      So say goodbye to missed deadlines, sloppy work and inflated invoices. And say hello to reliable project regimen and clear communication.
                     </p>
                   </div>
                 </div>

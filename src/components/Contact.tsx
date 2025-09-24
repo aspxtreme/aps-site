@@ -54,7 +54,7 @@ const Contact = () => {
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to ensure your property's compliance and service needs are handled professionally? 
-            Contact us for a no-obligation consultation.
+            Contact us for a no-obligation quote.
           </p>
         </div>
 

@@ -186,7 +186,7 @@ const ContactPage = () => {
             <div className="bg-slate-50 p-6 rounded-xl">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Professional Services</h3>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                As a veteran-owned company, we deliver specialized property maintenance with military precision and attention to detail.
+                We offer professional property services and facility maintenance for commercial and multi-family real estate. Reliable and Compliant. Always Fair Prices. Never Any Fluff.
               </p>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center">
