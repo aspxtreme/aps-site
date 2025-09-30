@@ -1,7 +1,27 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 
 const Hero = () => {
+  // Hero images array
+  const heroImages = [
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/trash-chute-cleaning.png',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-solar-cleaning.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-oprofessional-waterproofing.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/pressure-wash-building.jpg'
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-rotate images every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -62,11 +82,23 @@ const Hero = () => {
 
           <div className="relative animate-fade-in-up z-10">
             <div className="rounded-2xl overflow-hidden shadow-2xl animate-float">
-              <img 
-                src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/trash-chute-cleaning.png" 
-                alt="Professional trash chute repair technician at work"
-                className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover object-center rounded-2xl"
-              />
+              {heroImages.map((image, index) => (
+                <img 
+                  key={image}
+                  src={image}
+                  alt={`Professional property service ${index + 1}`}
+                  className={`w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover rounded-2xl transition-opacity duration-1000 ${
+                    index === currentImageIndex ? 'opacity-100' : 'opacity-0 absolute inset-0'
+                  } ${
+                    // Custom object positioning for optimal cropping per image
+                    image.includes('trash-chute-cleaning') ? 'object-center' :
+                    image.includes('aps-solar-cleaning') ? 'object-center' :
+                    image.includes('aps-oprofessional-waterproofing') ? 'object-center' :
+                    image.includes('high-rise-window-washing') ? 'object-center' :
+                    image.includes('pressure-wash-building') ? 'object-center' : 'object-center'
+                  }`}
+                />
+              ))}
             </div>
             <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg border animate-slide-in-left">
               <div className="flex items-center space-x-3">
