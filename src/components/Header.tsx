@@ -18,23 +18,27 @@ const Header = () => {
   }, []);
 
   const navigateToPage = (path: string) => {
-    navigate(path);
-    window.scrollTo(0, 0);
+    // Use React Router's replace to avoid navigation stack issues
+    navigate(path, { replace: false });
     setIsMenuOpen(false);
+    // Scroll after a brief delay to ensure page has loaded
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }, 50);
   };
 
   const scrollToSection = (sectionId: string) => {
     // If we're not on the home page, navigate there first
     if (location.pathname !== '/') {
-      navigate('/');
+      navigate('/', { replace: false });
       // Wait for navigation to complete, then scroll
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
           const offsetTop = element.offsetTop - 80;
-          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+          window.scrollTo({ top: offsetTop, behavior: 'auto' });
         }
-      }, 200);
+      }, 100);
       setIsMenuOpen(false);
       return;
     }

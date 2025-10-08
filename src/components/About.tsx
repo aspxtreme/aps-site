@@ -15,8 +15,8 @@ const About = () => {
     },
     {
       icon: Users,
-      title: 'Proven Network',
-      description: 'Established relationships with qualified, licensed contractors ensure every job meets our inspection-ready standards.'
+      title: 'Established Team',
+      description: 'Our dedicated APS crews, plus our network of proven licensed contractors, ensure all your property service needs meet our inspection-ready standards.'
     },
     {
       icon: TrendingUp,
@@ -73,7 +73,7 @@ const About = () => {
             <div className="absolute -top-4 -right-4 sm:-top-8 sm:-right-8 bg-white p-4 sm:p-6 rounded-xl shadow-lg border animate-slide-in-right">
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-accent-red">100%</div>
-                <div className="text-xs sm:text-sm text-gray-600">Veteran Owned</div>
+                <div className="text-xs sm:text-sm text-gray-600">Done Right</div>
               </div>
             </div>
           </div>

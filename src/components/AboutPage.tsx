@@ -6,8 +6,10 @@ const AboutPage = () => {
   const navigate = useNavigate();
 
   const navigateToContact = () => {
-    navigate('/contact');
-    window.scrollTo(0, 0);
+    navigate('/contact', { replace: false });
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }, 50);
   };
 
   const coreValues = [
@@ -47,7 +49,7 @@ const AboutPage = () => {
             <Flag className="w-16 h-16 text-accent-cyan mx-auto mb-6" />
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">About Us</h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              As a veteran-owned business, we apply the lessons of military precision — planning, execution, and accountability — to every professional property service we provide. At APS, we promise to keep your property spotless, safe, and inviting.
+              Our experienced leaders believe in a service-first mindset. We are a minority and veteran-owned business that demands meticulous planning, precise execution, and extreme accountability from our team for every professional property service we provide. At APS, we promise to keep your property spotless, safe, and inviting.
             </p>
           </div>
         </div>
@@ -90,7 +92,7 @@ const AboutPage = () => {
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border">
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent-red">100%</div>
-                <div className="text-sm text-gray-600">Veteran Owned</div>
+                <div className="text-sm text-gray-600">Compliant Work</div>
               </div>
             </div>
           </div>

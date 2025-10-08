@@ -4,7 +4,7 @@ import { Shield, Phone, Mail, Building2, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   return (

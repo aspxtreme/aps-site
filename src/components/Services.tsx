@@ -105,7 +105,7 @@ const Services = () => {
             Professional Property Services
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-            As a veteran-owned company, APS brings discipline, precision, and follow-through to every service. Our clients have worked with us for decades because we offer reliability and compliance at a fair price.
+            All-Star Property Service brings discipline, precision, and follow-through to every service. Our clients work with year-after-year because we offer reliability and compliance at a fair price. We are humble, servant-led and veteran-owned. Simply stated: We'll do a great job for you!
           </p>
         </div>
 
@@ -113,7 +113,7 @@ const Services = () => {
           {servicesRow1.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div key={index} className="bg-white p-6 lg:p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+              <div key={index} className="bg-white p-6 lg:p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl hover:border-secondary-blue hover:shadow-secondary-blue/20 transition-all duration-300 hover:transform hover:scale-105">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-4 lg:mb-6">
                   <Icon className="w-8 h-8 text-secondary-blue" />
                 </div>
@@ -139,7 +139,7 @@ const Services = () => {
           {servicesRow2.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div key={index} className="bg-white p-6 lg:p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+              <div key={index} className="bg-white p-6 lg:p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl hover:border-secondary-blue hover:shadow-secondary-blue/20 transition-all duration-300 hover:transform hover:scale-105">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-4 lg:mb-6">
                   <Icon className="w-8 h-8 text-secondary-blue" />
                 </div>
@@ -171,14 +171,14 @@ const Services = () => {
               <Award className="w-8 h-8 text-secondary-blue" />
             </div>
             <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">Certified Professionals</h4>
-            <p className="text-sm lg:text-base text-gray-600">Licensed contractors with specialized compliance expertise</p>
+            <p className="text-sm lg:text-base text-gray-600">Licensed crews with specialized compliance expertise</p>
           </div>
           <div className="p-6 sm:col-span-2 lg:col-span-1">
             <div className="w-12 h-12 lg:w-16 lg:h-16 bg-primary-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <Shield className="w-8 h-8 text-primary-blue" />
             </div>
             <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">Veteran Owned</h4>
-            <p className="text-sm lg:text-base text-gray-600">Military precision and reliability in every service</p>
+            <p className="text-sm lg:text-base text-gray-600">We serve, not sell, with precision and reliability on every job</p>
           </div>
         </div>
       </div>

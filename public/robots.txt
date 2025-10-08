@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Disallow thank you page (form submission only)
+Disallow: /thank-you
+
+# Sitemap location
+Sitemap: https://allstarpropertyservice.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

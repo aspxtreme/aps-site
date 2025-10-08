@@ -1,9 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 const Contact = () => {
+  const [captcha, setCaptcha] = useState({ question: '', answer: 0 });
+  const [captchaInput, setCaptchaInput] = useState('');
+  const [captchaError, setCaptchaError] = useState('');
+
+  // Generate simple math captcha
+  useEffect(() => {
+    const generateCaptcha = () => {
+      const num1 = Math.floor(Math.random() * 10) + 1;
+      const num2 = Math.floor(Math.random() * 10) + 1;
+      const operators = ['+', '-'];
+      const operator = operators[Math.floor(Math.random() * operators.length)];
+      
+      let answer;
+      if (operator === '+') {
+        answer = num1 + num2;
+      } else {
+        answer = num1 - num2;
+      }
+      
+      setCaptcha({
+        question: `${num1} ${operator} ${num2} = ?`,
+        answer: answer
+      });
+    };
+    
+    generateCaptcha();
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Validate captcha
+    if (parseInt(captchaInput) !== captcha.answer) {
+      setCaptchaError('Please solve the math problem correctly');
+      return;
+    }
+    
+    setCaptchaError('');
     
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -182,6 +218,25 @@ const Contact = () => {
                 <p className="text-xs sm:text-sm text-gray-500 mt-2">
                   Accepted formats: JPG, PNG, PDF, DOC, DOCX (Max 10MB per file)
                 </p>
+              </div>
+
+              <div>
+                <label htmlFor="captcha" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
+                  Security Check: {captcha.question} *
+                </label>
+                <input
+                  type="number"
+                  id="captcha"
+                  name="captcha"
+                  required
+                  value={captchaInput}
+                  onChange={(e) => setCaptchaInput(e.target.value)}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                  placeholder="Enter the answer"
+                />
+                {captchaError && (
+                  <p className="text-red-600 text-sm mt-1">{captchaError}</p>
+                )}
               </div>
 
               <button
