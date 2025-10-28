@@ -1,98 +1,52 @@
 import React from 'react';
-import { Shield, Wrench, FileCheck, AlertTriangle, Clock, Award } from 'lucide-react';
-import ImageCarousel from './ImageCarousel';
+import { 
+  Building, 
+  Calculator, 
+  Wrench, 
+  Users, 
+  FileText, 
+  Shield,
+  Clock,
+  Phone,
+  ArrowRight
+} from 'lucide-react';
 
 const Services = () => {
-  const servicesRow1 = [
+  const services = [
     {
-      icon: Shield,
-      title: 'Trash Chute Repair & Cleaning',
-      description: 'Expert repair, maintenance, and cleaning of trash chutes, ensuring safe and efficient operation for multi-story buildings.',
+      icon: Building,
+      title: 'HOA Management',
+      description: 'Comprehensive homeowner association management including board support, meeting coordination, and community oversight.',
+      image: 'https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800',
       features: [
-        'Chute door repairs & replacement',
-        'Discharge door maintenance',
-        'Safety system inspections',
-        'Emergency repair services'
+        'Board Meeting Management',
+        'Architectural Review Committee Support', 
+        'Community Enforcement',
+        'Vendor Management'
+      ]
+    },
+    {
+      icon: Calculator,
+      title: 'Financial Management',
+      description: 'Complete financial oversight including budgeting, accounting, collections, and detailed financial reporting.',
+      image: 'https://images.pexels.com/photos/6863183/pexels-photo-6863183.jpeg?auto=compress&cs=tinysrgb&w=800',
+      features: [
+        'Monthly Financial Statements',
+        'Budget Preparation & Analysis',
+        'Collections Management',
+        'Reserve Study Coordination'
       ]
     },
     {
       icon: Wrench,
-      title: 'Professional Window Cleaning',
-      description: 'High-quality window cleaning services for commercial buildings, ensuring crystal-clear views and professional appearance.',
+      title: 'Property Maintenance',
+      description: 'Professional maintenance services to keep your property in excellent condition and preserve its value.',
+      image: 'https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?auto=compress&cs=tinysrgb&w=800',
       features: [
-        'Interior & exterior cleaning',
-        'High-rise window access',
-        'Streak-free professional results',
-        'Regular maintenance schedules'
-      ]
-    },
-    {
-      icon: FileCheck,
-      title: 'Asphalt Striping & Surface Repair',
-      description: 'Professional asphalt striping and surface repair services to maintain safe and organized parking areas.',
-      features: [
-        'Parking lot line striping',
-        'ADA compliance markings',
-        'Surface crack repair',
-        'Asphalt maintenance'
-      ]
-    },
-    {
-      icon: AlertTriangle,
-      title: 'Parking Garage Pressure Washing',
-      description: 'Comprehensive pressure washing services for parking garages, removing stains, debris, and maintaining clean facilities.',
-      features: [
-        'Deep cleaning & stain removal',
-        'Oil stain treatment',
-        'Concrete surface restoration',
-        'Regular maintenance programs'
-      ]
-    }
-  ];
-
-  const servicesRow2 = [
-    {
-      icon: Shield,
-      title: 'Graffiti Removal & Painting',
-      description: 'Professional graffiti removal and protective coating services to maintain your property\'s appearance and value.',
-      features: [
-        'Complete graffiti removal',
-        'Anti-graffiti protective coatings',
-        'Touch-up painting services',
-        'Preventive maintenance programs'
-      ]
-    },
-    {
-      icon: Wrench,
-      title: 'Floor, Tile & Carpet Cleaning',
-      description: 'Deep cleaning services for all floor types including tile, ensuring hygienic and professional environments for tenants and visitors.',
-      features: [
-        'Commercial carpet cleaning',
-        'Tile & hard floor maintenance',
-        'Stain removal & treatment',
-        'Regular cleaning schedules'
-      ]
-    },
-    {
-      icon: AlertTriangle,
-      title: 'Trash Bin & Dumpster Cleaning',
-      description: 'Sanitization and cleaning of waste containers to eliminate odors, bacteria, and maintain a healthy environment.',
-      features: [
-        'High-pressure sanitization',
-        'Odor elimination treatment',
-        'Scheduled cleaning programs',
-        'Eco-friendly cleaning solutions'
-      ]
-    },
-    {
-      icon: FileCheck,
-      title: 'Commercial Handyman Services',
-      description: 'Comprehensive repair and maintenance services for commercial properties, handling everything from minor fixes to major installations.',
-      features: [
-        'Plumbing & electrical repairs',
-        'Drywall & painting services',
-        'Door & window maintenance',
-        'HVAC system support'
+        'Preventive Maintenance Programs',
+        'Emergency Repair Coordination',
+        'Contractor Management',
+        'Capital Improvement Projects'
       ]
     }
   ];
@@ -101,84 +55,105 @@ const Services = () => {
     <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Professional Property Services
+          <h2 className="text-4xl lg:text-5xl font-bold text-primary-navy mb-6">
+            Comprehensive Management Services
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-            All-Star Property Service brings discipline, precision, and follow-through to every service. Our clients work with year-after-year because we offer reliability and compliance at a fair price. We are humble, servant-led and veteran-owned. Simply stated: We'll do a great job for you!
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            From financial management to property maintenance, we provide complete condominium 
+            and HOA management services tailored to your community's unique needs.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
-          {servicesRow1.map((service, index) => {
+        <div className="space-y-20">
+          {services.map((service, index) => {
             const Icon = service.icon;
+            const isEven = index % 2 === 0;
+            
             return (
-              <div key={index} className="bg-white p-6 lg:p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl hover:border-secondary-blue hover:shadow-secondary-blue/20 transition-all duration-300 hover:transform hover:scale-105">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-4 lg:mb-6">
-                  <Icon className="w-8 h-8 text-secondary-blue" />
+              <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div className={`${!isEven ? 'lg:col-start-2' : ''}`}>
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-16 h-16 bg-primary-navy rounded-xl flex items-center justify-center">
+                        <Icon className="w-8 h-8 text-accent-cyan" />
+                      </div>
+                      <h3 className="text-3xl font-bold text-primary-navy">{service.title}</h3>
+                    </div>
+                    
+                    <p className="text-xl text-gray-600 leading-relaxed">{service.description}</p>
+                    
+                    <ul className="grid md:grid-cols-2 gap-3">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-gray-700">
+                          <div className="w-2 h-2 bg-accent-cyan rounded-full mr-3 flex-shrink-0"></div>
+                          <span className="font-medium">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <button className="inline-flex items-center text-primary-navy font-semibold hover:text-accent-gold transition-colors duration-200">
+                      Learn More
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </button>
+                  </div>
                 </div>
-                <h3 className="text-lg lg:text-xl font-semibold text-primary-blue mb-3">{service.title}</h3>
-                <p className="text-sm lg:text-base text-gray-600 mb-4 lg:mb-6 leading-relaxed">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-xs lg:text-sm text-gray-700">
-                      <div className="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                
+                <div className={`${!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <div className="relative">
+                    <img 
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-80 lg:h-96 object-cover rounded-2xl shadow-2xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-navy/20 to-transparent rounded-2xl"></div>
+                  </div>
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Image Carousel */}
-        <ImageCarousel />
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
-          {servicesRow2.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <div key={index} className="bg-white p-6 lg:p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl hover:border-secondary-blue hover:shadow-secondary-blue/20 transition-all duration-300 hover:transform hover:scale-105">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-4 lg:mb-6">
-                  <Icon className="w-8 h-8 text-secondary-blue" />
+        {/* CTA Section */}
+        <div className="mt-20 text-center">
+          <div 
+            className="relative rounded-3xl overflow-hidden"
+            style={{
+              backgroundImage: `linear-gradient(rgba(15, 37, 84, 0.9), rgba(15, 37, 84, 0.9)), url('https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1200')`
+            }}
+          >
+            <div className="px-8 lg:px-16 py-16 text-center">
+              <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Trusted by Communities Everywhere
+              </h3>
+              <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Our commitment to excellence speaks through our results. Join hundreds of communities 
+                who trust us for professional property management.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-8 mb-8">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Clock className="w-8 h-8 text-primary-navy" />
+                  </div>
+                  <div className="text-4xl font-bold text-white mb-2">24/7</div>
+                  <div className="text-gray-300 font-medium">Emergency Support</div>
                 </div>
-                <h3 className="text-lg lg:text-xl font-semibold text-primary-blue mb-3">{service.title}</h3>
-                <p className="text-sm lg:text-base text-gray-600 mb-4 lg:mb-6 leading-relaxed">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-xs lg:text-sm text-gray-700">
-                      <div className="w-1.5 h-1.5 bg-accent-cyan rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Building className="w-8 h-8 text-primary-navy" />
+                  </div>
+                  <div className="text-4xl font-bold text-white mb-2">500+</div>
+                  <div className="text-gray-300 font-medium">Properties Managed</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-accent-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-primary-navy" />
+                  </div>
+                  <div className="text-4xl font-bold text-white mb-2">10K+</div>
+                  <div className="text-gray-300 font-medium">Happy Residents</div>
+                </div>
               </div>
-            );
-          })}
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 text-center">
-          <div className="p-6">
-            <div className="w-12 h-12 lg:w-16 lg:h-16 bg-accent-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Clock className="w-8 h-8 text-accent-red" />
             </div>
-            <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">Rapid Response</h4>
-            <p className="text-sm lg:text-base text-gray-600">24-48 hour quote turnaround for all service requests</p>
-          </div>
-          <div className="p-6">
-            <div className="w-12 h-12 lg:w-16 lg:h-16 bg-secondary-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Award className="w-8 h-8 text-secondary-blue" />
-            </div>
-            <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">Certified Professionals</h4>
-            <p className="text-sm lg:text-base text-gray-600">Licensed crews with specialized compliance expertise</p>
-          </div>
-          <div className="p-6 sm:col-span-2 lg:col-span-1">
-            <div className="w-12 h-12 lg:w-16 lg:h-16 bg-primary-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Shield className="w-8 h-8 text-primary-blue" />
-            </div>
-            <h4 className="text-lg lg:text-xl font-semibold text-gray-900 mb-2">Veteran Owned</h4>
-            <p className="text-sm lg:text-base text-gray-600">We serve, not sell, with precision and reliability on every job</p>
           </div>
         </div>
       </div>

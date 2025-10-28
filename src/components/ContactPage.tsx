@@ -1,46 +1,9 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { Phone, Mail, MapPin, Clock, Award, Shield, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, Users, Building, Wrench } from 'lucide-react';
 
 const ContactPage = () => {
-  const [captcha, setCaptcha] = useState({ question: '', answer: 0 });
-  const [captchaInput, setCaptchaInput] = useState('');
-  const [captchaError, setCaptchaError] = useState('');
-
-  // Generate simple math captcha
-  useEffect(() => {
-    const generateCaptcha = () => {
-      const num1 = Math.floor(Math.random() * 10) + 1;
-      const num2 = Math.floor(Math.random() * 10) + 1;
-      const operators = ['+', '-'];
-      const operator = operators[Math.floor(Math.random() * operators.length)];
-      
-      let answer;
-      if (operator === '+') {
-        answer = num1 + num2;
-      } else {
-        answer = num1 - num2;
-      }
-      
-      setCaptcha({
-        question: `${num1} ${operator} ${num2} = ?`,
-        answer: answer
-      });
-    };
-    
-    generateCaptcha();
-  }, []);
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Validate captcha
-    if (parseInt(captchaInput) !== captcha.answer) {
-      setCaptchaError('Please solve the math problem correctly');
-      return;
-    }
-    
-    setCaptchaError('');
     
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -61,35 +24,35 @@ const ContactPage = () => {
     }
   };
 
-  const advantages = [
+  const services = [
     {
-      icon: Clock,
-      title: 'Rapid Response',
-      description: '24-48 hour quote turnaround for all service requests'
+      icon: Users,
+      title: 'HOA Management',
+      description: 'Complete board support and community oversight'
     },
     {
-      icon: Award,
-      title: 'Certified Professionals',
-      description: 'Licensed contractors with specialized compliance expertise'
+      icon: Building,
+      title: 'Financial Management',
+      description: 'Budgeting, accounting, and financial reporting'
     },
     {
-      icon: Shield,
-      title: 'Veteran Owned',
-      description: 'Military precision and reliability in every service'
+      icon: Wrench,
+      title: 'Property Maintenance',
+      description: 'Preventive maintenance and repair coordination'
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-16">
+    <div className="min-h-screen bg-warm-white pt-20">
       {/* Header */}
-      <div className="bg-primary-blue py-16">
+      <div className="bg-primary-navy py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <MessageCircle className="w-16 h-16 text-accent-cyan mx-auto mb-6" />
+            <MessageCircle className="w-16 h-16 text-accent-gold mx-auto mb-6" />
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">Contact Us</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Ready to partner with All-Star Property Service? <br />
-              Get in touch today for your free inspection and fast estimate.
+              Ready to experience professional condominium management? <br />
+              Get in touch today for your free consultation.
             </p>
           </div>
         </div>
@@ -101,8 +64,8 @@ const ContactPage = () => {
           
           {/* Right Column - Form */}
           <div className="lg:col-span-3 order-1 lg:order-2">
-            <div className="bg-white border-2 border-accent-red/20 rounded-xl p-8 shadow-lg shadow-accent-red/10">
-              <h2 className="text-2xl font-bold text-accent-red mb-6 text-center">Request Your Free Estimate</h2>
+            <div className="bg-white border-2 border-secondary-blue/20 rounded-xl p-8 shadow-lg">
+              <h2 className="text-2xl font-bold text-primary-navy mb-6 text-center">Request Your Free Consultation</h2>
               <form
                 onSubmit={handleSubmit}
                 name="contactpage-contact"
@@ -118,117 +81,82 @@ const ContactPage = () => {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Name *
+                    <label htmlFor="name" className="block text-sm font-medium text-primary-navy mb-2">
+                      Full Name *
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent transition-colors duration-200"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email *
+                    <label htmlFor="email" className="block text-sm font-medium text-primary-navy mb-2">
+                      Email Address *
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent transition-colors duration-200"
                     />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone *
+                    <label htmlFor="phone" className="block text-sm font-medium text-primary-navy mb-2">
+                      Phone Number *
                     </label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent transition-colors duration-200"
                     />
                   </div>
                   <div>
-                    <label htmlFor="propertyType" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="propertyType" className="block text-sm font-medium text-primary-navy mb-2">
                       Property Type *
                     </label>
                     <select
                       id="propertyType"
                       name="propertyType"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent transition-colors duration-200"
                     >
                       <option value="">Select Property Type</option>
-                      <option value="commercial">Commercial</option>
-                      <option value="multi-family">Multi-Family</option>
-                      <option value="industrial">Industrial</option>
+                      <option value="condominium">Condominium</option>
+                      <option value="hoa">Homeowner Association</option>
+                      <option value="townhome">Townhome Community</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Details *
+                  <label htmlFor="message" className="block text-sm font-medium text-primary-navy mb-2">
+                    Tell Us About Your Needs *
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     required
                     rows={5}
-                    placeholder="Tell us about your project needs ..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 resize-none"
+                    placeholder="Please describe your property management needs, current challenges, or questions..."
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-blue focus:border-transparent transition-colors duration-200 resize-none"
                   />
                 </div>
 
-                <div>
-                  <label htmlFor="attachments" className="block text-sm font-medium text-gray-700 mb-2">
-                    Attach Photos or Documents (Optional)
-                  </label>
-                  <input
-                    type="file"
-                    id="attachments"
-                    name="attachments"
-                    multiple
-                    accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-red-50 file:text-red-700 hover:file:bg-red-100"
-                  />
-                  <p className="text-sm text-gray-500 mt-2">
-                    Accepted formats: JPG, PNG, PDF, DOC, DOCX (Max 10MB per file)
-                  </p>
-                </div>
-
-              <div>
-                <label htmlFor="captcha" className="block text-sm font-medium text-gray-700 mb-2">
-                  Security Check: {captcha.question} *
-                </label>
-                <input
-                  type="number"
-                  id="captcha"
-                  name="captcha"
-                  required
-                  value={captchaInput}
-                  onChange={(e) => setCaptchaInput(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-red focus:border-transparent transition-colors duration-200"
-                  placeholder="Enter the answer"
-                />
-                {captchaError && (
-                  <p className="text-red-600 text-sm mt-1">{captchaError}</p>
-                )}
-              </div>
                 <button
                   type="submit"
-                  className="w-full py-4 px-8 bg-accent-red hover:bg-accent-cyan hover:text-[#181B38] text-white rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="w-full py-4 px-8 bg-accent-cyan hover:bg-accent-cyan/80 text-primary-navy rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  Get Your Free Estimate
+                  Request Free Consultation
                 </button>
               </form>
             </div>
@@ -238,99 +166,69 @@ const ContactPage = () => {
           <div className="lg:col-span-2 space-y-8 order-2 lg:order-1">
 
             {/* Services Overview */}
-            <div className="bg-slate-50 p-6 rounded-xl">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Professional Services</h3>
+            <div className="bg-light-gray p-6 rounded-xl">
+              <h3 className="text-2xl font-bold text-primary-navy mb-4">Our Management Services</h3>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                We offer professional property services and facility maintenance for commercial and multi-family real estate. Reliable and Compliant. Always Fair Prices. Never Any Fluff.
+                Professional condominium and HOA management services with over 25 years of experience 
+                in building strong communities and protecting property values.
               </p>
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
-                  Trash Chute Repair & Cleaning
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
-                  Professional Window Cleaning
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
-                  Asphalt Striping & Surface Repair
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
-                  Parking Garage Pressure Washing
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
-                  Commercial Handyman Services
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
-                  Plus More Cost-Effective Solutions
-                </li>
-              </ul>
+              <div className="space-y-4">
+                {services.map((service, index) => {
+                  const Icon = service.icon;
+                  return (
+                    <div key={index} className="flex items-start space-x-3">
+                      <div className="w-8 h-8 bg-secondary-blue/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                        <Icon className="w-4 h-4 text-secondary-blue" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-primary-navy">{service.title}</h4>
+                        <p className="text-sm text-gray-600">{service.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             
-            {/* Why Choose APS */}
-            <div className="space-y-6">
-              {advantages.map((advantage, index) => {
-                const Icon = advantage.icon;
-                let iconColor = 'text-primary-blue';
-                let bgColor = 'bg-secondary-blue/20';
-                
-                if (advantage.title === 'Rapid Response') {
-                  iconColor = 'text-accent-red';
-                  bgColor = 'bg-accent-red/20';
-                } else if (advantage.title === 'Certified Professionals') {
-                  iconColor = 'text-secondary-blue';
-                  bgColor = 'bg-secondary-blue/20';
-                } else if (advantage.title === 'Veteran Owned') {
-                  iconColor = 'text-primary-blue';
-                  bgColor = 'bg-primary-blue/20';
-                }
-                
-                return (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className={`w-12 h-12 ${bgColor} rounded-lg flex items-center justify-center flex-shrink-0`}>
-                      <Icon className={`w-6 h-6 ${iconColor}`} />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-0">{advantage.title}</h4>
-                      <p className="text-gray-600 leading-relaxed">{advantage.description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-
             {/* Contact Info */}
-            <div className="bg-primary-blue p-6 rounded-xl text-white">
+            <div className="bg-primary-navy p-6 rounded-xl text-white">
               <h3 className="text-xl font-semibold mb-4">Get In Touch</h3>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-accent-cyan" />
-                  <div>
-                    <p className="font-medium">Email</p>
-                    <a href="mailto:quote@allstarpropertyservice.com" className="text-accent-cyan hover:text-white transition-colors">
-                      quote@allstarpropertyservice.com
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-accent-cyan" />
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <Phone className="w-5 h-5 text-accent-cyan flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-medium">Phone</p>
-                    <a href="tel:+17146319056" className="text-accent-cyan hover:text-white transition-colors">
-                      (714) 631-9056
+                    <a href="tel:+15551234567" className="text-accent-gold hover:text-white transition-colors">
+                      (555) 123-4567
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="w-5 h-5 text-accent-cyan flex-shrink-0" />
+                <div className="flex items-start space-x-3">
+                  <Mail className="w-5 h-5 text-accent-cyan flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-medium">Service Areas</p>
+                    <p className="font-medium">Email</p>
+                    <a href="mailto:info@condoassociates.com" className="text-accent-gold hover:text-white transition-colors">
+                      info@condoassociates.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-accent-cyan flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-medium">Office</p>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Orange County, Los Angeles, Ventura, Santa Barbara, Riverside, San Bernardino, San Diego, Imperial Counties and parts of Kern & San Luis Obispo
+                      123 Management Boulevard<br />
+                      Suite 100, City, State 12345
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <Clock className="w-5 h-5 text-accent-cyan flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-medium">Business Hours</p>
+                    <p className="text-gray-300 text-sm">
+                      Monday - Friday: 8:00 AM - 6:00 PM<br />
+                      24/7 Emergency Support
                     </p>
                   </div>
                 </div>

@@ -6,17 +6,13 @@ const ThankYouPage = () => {
   const navigate = useNavigate();
 
   const goHome = () => {
-    navigate('/', { replace: false });
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'auto' });
-    }, 50);
+    navigate('/');
+    window.scrollTo(0, 0);
   };
 
   const goToContact = () => {
-    navigate('/contact', { replace: false });
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'auto' });
-    }, 50);
+    navigate('/contact');
+    window.scrollTo(0, 0);
   };
 
   return (
