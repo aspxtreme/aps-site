@@ -1,66 +1,55 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Users, Target, Shield, CheckCircle, Award, Building } from 'lucide-react';
+import { Flag, Target, Shield, CheckCircle, Users, Award } from 'lucide-react';
 
 const AboutPage = () => {
   const navigate = useNavigate();
 
   const navigateToContact = () => {
-    navigate('/contact');
-    window.scrollTo(0, 0);
+    navigate('/contact', { replace: false });
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }, 50);
   };
 
   const coreValues = [
     {
       icon: Target,
-      title: 'Excellence',
-      description: 'Committed to the highest standards of professional management'
+      title: 'Disciplined',
+      description: 'Military-level preparation and execution'
     },
     {
       icon: CheckCircle,
-      title: 'Integrity',
-      description: 'Transparent, honest, and ethical in all our dealings'
+      title: 'Clear',
+      description: 'Transparent communication, no surprises'
     },
     {
       icon: Shield,
-      title: 'Reliability',
-      description: 'Dependable service you can count on, 24/7'
+      title: 'Reliable',
+      description: 'On time, every time'
     },
     {
       icon: Award,
-      title: 'Expertise',
-      description: 'Deep knowledge of condominium and HOA management'
+      title: 'Fair',
+      description: 'Competitive pricing without unnecessary overhead'
     },
     {
       icon: Users,
-      title: 'Community',
-      description: 'Building stronger, more vibrant communities'
+      title: 'Supportive',
+      description: 'The team behind your team'
     }
   ];
 
-  const stats = [
-    { number: '500+', label: 'Properties Managed' },
-    { number: '25+', label: 'Years Experience' },
-    { number: '10K+', label: 'Happy Residents' },
-    { number: '98%', label: 'Client Satisfaction' }
-  ];
-
   return (
-    <div className="min-h-screen bg-warm-white pt-20">
+    <div className="min-h-screen bg-white pt-16">
       {/* Header */}
-      <div className="bg-primary-navy py-16">
+      <div className="bg-primary-blue py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <img 
-              src="https://images.squarespace-cdn.com/content/v1/5ba66b8eca525b39055173f0/8bb26ac2-7e67-4506-bb76-120073a80434/CA+LOGO+Transparent.png?format=1500w"
-              alt="Condo Associates"
-              className="h-16 w-auto mx-auto mb-6"
-            />
+            <Flag className="w-16 h-16 text-accent-cyan mx-auto mb-6" />
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">About Us</h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              For over 25 years, Condo Associates has been a trusted partner in condominium and 
-              homeowner association management, helping communities thrive through professional 
-              service and expert guidance.
+              Our experienced leaders believe in a service-first mindset. We are a minority and veteran-owned business that demands meticulous planning, precise execution, and extreme accountability from our team for every professional property service we provide. At APS, we promise to keep your property spotless, safe, and inviting.
             </p>
           </div>
         </div>
@@ -69,69 +58,78 @@ const AboutPage = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         
-        {/* Our Story */}
+        {/* Hero Image and Our Story */}
         <div className="mb-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-primary-navy">Our Story</h2>
-              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  Founded in 1998, Condo Associates began with a simple mission: to provide 
-                  professional, reliable, and personalized management services for condominium 
-                  and homeowner associations.
-                </p>
-                <p>
-                  What started as a small local firm has grown into one of the region's most 
-                  trusted property management companies, managing over 500 properties and serving 
-                  more than 10,000 residents across diverse communities.
-                </p>
-                <p>
-                  Our success is built on the foundation of strong relationships, transparent 
-                  communication, and an unwavering commitment to excellence in everything we do.
-                </p>
-              </div>
+          <div className="space-y-8 mb-12">
+            <div>
+              <h2 className="text-3xl font-bold text-accent-red mb-6">Our Story</h2>
+              <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                APS was founded on the belief that property managers deserve true partners, not vendors. Whether it's chute repairs, compliance inspections, cleaning, or maintenance, our approach is always the same: professional results you can trust, delivered at a fair price.
+              </p>
+              <ul className="text-lg text-gray-700 space-y-2">
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-accent-cyan rounded-full mr-4 flex-shrink-0"></div>
+                  <strong>Code Compliance & Inspection-Ready</strong>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-accent-cyan rounded-full mr-4 flex-shrink-0"></div>
+                  <strong>Reliability & Communication</strong>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-accent-cyan rounded-full mr-4 flex-shrink-0"></div>
+                  <strong>Highest-Quality, Professional Results</strong>
+                </li>
+              </ul>
             </div>
+          </div>
 
-            <div className="relative">
-              <img 
-                src="https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                alt="Professional management team"
-                className="w-full h-[400px] object-cover rounded-2xl shadow-2xl"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary-navy">25+</div>
-                  <div className="text-sm text-gray-600">Years Serving</div>
-                </div>
+          <div className="relative">
+            <img 
+              src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/building-flag-mirror.jpg" 
+              alt="American flag on commercial building representing veteran-owned business values"
+              className="w-full h-[400px] object-cover rounded-2xl shadow-2xl"
+            />
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent-red">100%</div>
+                <div className="text-sm text-gray-600">Compliant Work</div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div className="bg-secondary-blue rounded-2xl p-8 lg:p-12 mb-20">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-white mb-4">Our Impact</h2>
-            <p className="text-xl text-gray-100">Building stronger communities through professional management</p>
+        {/* Our Promise & Differentiator */}
+        <div className="grid lg:grid-cols-2 gap-16 mb-20">
+          <div className="bg-secondary-blue/20 p-8 rounded-2xl border-2 border-secondary-blue/30">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Promise</h2>
+            <h3 className="text-2xl font-semibold text-accent-red mb-6">Disciplined. Caring. Great Communication.</h3>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              We carry the mission, so you can keep the credit. From inspections to execution, we deliver professional 
+              results that make our clients look good.
+            </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-gray-200 font-medium">{stat.label}</div>
-              </div>
-            ))}
+
+          <div className="bg-primary-blue p-8 rounded-2xl text-white">
+            <h2 className="text-3xl font-bold mb-6">Our Differentiator</h2>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-semibold text-accent-cyan">Planned. Precise. Done Properly.</h3>
+              <p className="text-xl leading-relaxed">
+                APS meticulously plans every detail of every mission, communicates clearly, and delivers results that 
+                pass inspection — without wasted time or excuses.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Core Values */}
         <div className="mb-20">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-navy mb-4">Our Core Values</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              These principles guide every decision we make and every service we provide, 
-              ensuring consistent excellence in community management.
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-blue mb-4">Our Core Values</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-6">
+              Property and facility managers carry an impossible burden. You're judged on keeping everything spotless, safe, and compliant — but the service partners you have to rely on can make your job even more difficult. Having to constantly follow-up and manage details can feel like you're doing their job, instead of yours.
+            </p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              To help service your properties, these values guide every decision we make and every service we deliver.
             </p>
           </div>
 
@@ -139,80 +137,82 @@ const AboutPage = () => {
             {coreValues.map((value, index) => {
               const Icon = value.icon;
               return (
-                <div key={index} className="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                  <div className="w-16 h-16 bg-accent-cyan/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-accent-cyan" />
+                <div key={index} className="flip-card h-64 rounded-xl shadow-lg">
+                  <div className="flip-card-inner">
+                    {/* Front of card - Just the title */}
+                    <div className="flip-card-front bg-primary-blue rounded-xl flex items-center justify-center p-8">
+                      <h3 className="text-4xl font-bold text-white text-center">{value.title}</h3>
+                    </div>
+                    {/* Back of card - Icon and description */}
+                    <div className="flip-card-back bg-accent-cyan rounded-xl p-8 flex flex-col items-center justify-center">
+                      <div className="w-16 h-16 bg-primary-blue rounded-xl flex items-center justify-center mb-6">
+                        <Icon className="w-8 h-8 text-accent-cyan" />
+                      </div>
+                      <h3 className="text-2xl font-semibold text-primary-blue mb-3">{value.title}</h3>
+                      <p className="text-primary-blue leading-relaxed text-center">{value.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-primary-navy mb-3">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
                 </div>
               );
             })}
-          </div>
-        </div>
-
-        {/* Leadership Team */}
-        <div className="mb-20">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-primary-navy mb-4">Leadership Team</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet the experienced professionals who lead our commitment to excellence
-            </p>
-          </div>
-
-          <div className="bg-light-gray rounded-2xl p-8 lg:p-12">
-            <div className="text-center">
+            
+            {/* Logo card - static, no flip */}
+            <div className="bg-primary-blue rounded-xl shadow-lg h-64 flex items-center justify-center p-8">
               <img 
-                src="https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                alt="Leadership team"
-                className="w-64 h-64 object-cover rounded-full mx-auto mb-8 shadow-xl"
+                src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-logo-full-color-NEW-bold.png" 
+                alt="All Star Property Services Logo" 
+                className="max-w-full max-h-full object-contain transform scale-125"
               />
-              <h3 className="text-2xl font-bold text-primary-navy mb-2">Professional Management Team</h3>
-              <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                Our leadership team brings together decades of experience in property management, 
-                financial oversight, and community development. Each member is committed to delivering 
-                exceptional service and building lasting relationships with our clients.
-              </p>
             </div>
           </div>
         </div>
 
-        {/* Our Mission & Vision */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-20">
-          <div className="bg-primary-navy p-8 rounded-2xl text-white">
-            <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-            <p className="text-xl leading-relaxed">
-              To provide exceptional management services that enhance property values, strengthen 
-              community bonds, and deliver peace of mind to property owners and residents alike.
+        {/* Closing Statement */}
+        <div className="mb-20 relative bg-slate-50 p-12 rounded-2xl border-2 border-gray-200 overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 opacity-50 bg-cover bg-no-repeat"
+            style={{
+              backgroundImage: 'url(https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/building-flag.jpg)',
+              backgroundPosition: 'right 20% top 0%'
+            }}
+          ></div>
+          
+          {/* White Overlay for Readability */}
+          <div className="absolute inset-0 bg-white opacity-20"></div>
+          
+          {/* Content */}
+          <div className="relative z-10 text-center">
+            <h2 className="text-3xl font-bold text-primary-blue mb-6">Your Dependable Partner</h2>
+            <p className="text-xl text-gray-900 leading-relaxed mb-6 max-w-4xl mx-auto">
+              For more than a decade, our "All-Star" professional property services team has served as the chosen partner of top property management firms and commercial real estate owners because APS is always reliable and fair.
             </p>
-          </div>
-          <div className="bg-accent-cyan p-8 rounded-2xl text-white">
-            <h2 className="text-3xl font-bold mb-6">Our Vision</h2>
-            <p className="text-xl leading-relaxed">
-              To be the premier choice for condominium and HOA management, setting the standard 
-              for professionalism, innovation, and community excellence in our industry.
+            <p className="text-xl text-gray-900 leading-relaxed mb-4 max-w-3xl mx-auto">
+              With APS, you can say goodbye to missed deadlines, sloppy work and inflated invoices. And say hello to project precision and attention to detail.
+            </p>
+            <p className="text-2xl text-accent-red font-bold">
+              Mission complete, every time.
             </p>
           </div>
         </div>
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="bg-white rounded-2xl p-12 shadow-lg border border-gray-200">
-            <h3 className="text-3xl font-bold text-primary-navy mb-4">Ready to Experience the Difference?</h3>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Join hundreds of communities who trust Condo Associates for professional, 
-              reliable, and personalized management services.
+          <div className="bg-primary-blue rounded-2xl p-12 shadow-lg">
+            <h3 className="text-3xl font-bold text-white mb-4">Ready to Experience the APS Difference?</h3>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              Join property managers who trust APS for reliable, compliant, and professional service delivery.
             </p>
             <button 
               onClick={navigateToContact}
-              className="inline-flex items-center justify-center px-8 py-4 bg-primary-navy text-white font-semibold rounded-lg hover:bg-secondary-blue transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-8 py-4 bg-accent-red text-white font-semibold rounded-lg hover:bg-accent-cyan hover:text-[#181B38] transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
-              Schedule Your Free Consultation
+              Get Your Free Inspection Today
             </button>
           </div>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 

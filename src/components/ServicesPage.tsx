@@ -21,8 +21,10 @@ const ServicesPage = () => {
   const navigate = useNavigate();
 
   const navigateToContact = () => {
-    navigate('/contact');
-    window.scrollTo(0, 0);
+    navigate('/contact', { replace: false });
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }, 50);
   };
 
   // Images for the rotating gallery
@@ -276,7 +278,7 @@ const ServicesPage = () => {
                 worry about compliance details.
               </p>
               <p>
-                That's where we come in. APS brings discipline and follow-through to every professional property cleaning, repair and restoration service. We handle the work behind the scenes — the cleaning, repairs, inspections, and maintenance 
+                That's where we come in. APS brings discipline and follow-through to every professional property cleaning, repair and restoration service. We handle the work behind the scenes, the cleaning, repairs, inspections, and maintenance 
                 that keep everything running smoothly.
               </p>
               <p className="text-xl font-semibold text-primary-blue">
@@ -304,7 +306,7 @@ const ServicesPage = () => {
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+                <div key={index} className="bg-white p-8 rounded-xl border border-gray-200 shadow-lg hover:shadow-xl hover:border-secondary-blue hover:shadow-secondary-blue/20 transition-all duration-300 hover:transform hover:scale-105">
                   <div className="w-16 h-16 bg-secondary-blue/20 rounded-xl flex items-center justify-center mb-6">
                     <Icon className="w-8 h-8 text-secondary-blue" />
                   </div>
@@ -335,7 +337,7 @@ const ServicesPage = () => {
               Why Choose APS?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional service delivery backed by military precision and veteran values.
+              Clients have trusted us for decades and continue to rely on All-Star Property Service for our low-ego, high-service approach. With APS, your jobs get professional service delivery backed by military precision and veteran values.
             </p>
           </div>
 
