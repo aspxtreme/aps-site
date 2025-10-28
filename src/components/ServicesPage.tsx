@@ -44,7 +44,9 @@ const ServicesPage = () => {
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-floor-care.jpg',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-roof-coating.jpg',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-epoxy-floor-coating.jpg',
-    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-oprofessional-waterproofing.jpg'
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-oprofessional-waterproofing.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-trash-bin-pressure-wash-9.png',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-trash-bin-pressure-wash-7.png',
   ];
 
   // State for rotating images in 4 boxes
