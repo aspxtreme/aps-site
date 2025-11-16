@@ -2,6 +2,12 @@
   publish = "dist"
   command = "npm run build"
 
+# SPA routing - handle all routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 # Prevent aggressive caching of HTML files
 [[headers]]
   for = "*.html"
@@ -15,11 +21,6 @@
   for = "/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
 
 [build.environment]
   NODE_VERSION = "18"
