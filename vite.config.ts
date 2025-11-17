@@ -10,6 +10,10 @@ export default defineConfig({
   preview: {
     historyApiFallback: true,
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  },
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
