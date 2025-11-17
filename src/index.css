@@ -60,6 +60,16 @@
   animation: float 3s ease-in-out infinite;
 }
 
+/* Smooth scrolling for hash anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed header when scrolling to anchors */
+.scroll-mt-16 {
+  scroll-margin-top: 4rem;
+}
+
 /* Flip Card Styles */
 .flip-card {
   background-color: transparent;

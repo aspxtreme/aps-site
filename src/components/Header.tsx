@@ -33,20 +33,22 @@ const Header = () => {
       navigate('/', { replace: false });
       // Wait for navigation to complete, then scroll
       setTimeout(() => {
+        // Update URL hash
+        window.location.hash = sectionId;
         const element = document.getElementById(sectionId);
         if (element) {
-          const offsetTop = element.offsetTop - 80;
-          window.scrollTo({ top: offsetTop, behavior: 'auto' });
+          element.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 100);
+      }, 200);
       setIsMenuOpen(false);
       return;
     }
     
+    // Update URL hash
+    window.location.hash = sectionId;
     const element = document.getElementById(sectionId);
     if (element) {
-      const offsetTop = element.offsetTop - 80;
-      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
   };

@@ -25,9 +25,42 @@ const HomePage = () => (
 function App() {
   console.log('App component loaded'); // Debug log
 
-  // Simple scroll to top on route changes
+  // Handle both route changes and hash anchors
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    const handleRouteAndHash = () => {
+      // Get current hash from URL
+      const hash = window.location.hash;
+      
+      if (hash) {
+        // If there's a hash, scroll to that element after a brief delay
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        // No hash, scroll to top
+        window.scrollTo(0, 0);
+      }
+    };
+
+    // Handle on initial load
+    handleRouteAndHash();
+
+    // Handle hash changes (when user clicks anchor links)
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   return (
