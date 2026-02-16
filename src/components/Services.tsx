@@ -39,11 +39,11 @@ const Services = () => {
     },
     {
       icon: AlertTriangle,
-      title: 'Parking Garage Pressure Washing',
-      description: 'Comprehensive pressure washing services for parking garages, removing stains, debris, and maintaining clean facilities.',
+      title: 'Parking Area Sweeping & Pressure Washing',
+      description: 'Comprehensive industrial truck sweeping and pressure washing services for parking lots and garages, removing stains, debris, and maintaining clean facilities.',
       features: [
-        'Deep cleaning & stain removal',
-        'Oil stain treatment',
+        'Deep cleaning & oil stain treatment',
+        'Industrial truck area sweeping',
         'Concrete surface restoration',
         'Regular maintenance programs'
       ]

@@ -258,7 +258,7 @@ const ContactPage = () => {
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>
-                  Parking Garage Pressure Washing
+                  Parking Area Sweeping & Pressure Washing
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-accent-red rounded-full mr-3 flex-shrink-0"></div>

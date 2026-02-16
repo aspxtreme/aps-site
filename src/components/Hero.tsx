@@ -8,7 +8,8 @@ const Hero = () => {
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/trash-chute-cleaning.png',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-solar-cleaning.jpg',
     'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-oprofessional-waterproofing.jpg',
-    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/pressure-wash-building.jpg'
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/pressure-wash-building.jpg',
+    'https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-sweeper-isuzu.png'
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -59,7 +60,7 @@ const Hero = () => {
                 'Trash Chute Repair & Cleaning',
                 'Professional Window Cleaning',
                 'Asphalt Striping & Surface Repair',
-                'Parking Garage Pressure Washing',
+                'Parking Area Sweeping & Pressure Washing',
                 'Plus more Cost-Effective Services'
               ].map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3">
