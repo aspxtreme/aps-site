@@ -1,8 +1,9 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Award, Shield, MessageCircle } from 'lucide-react';
 
 const ContactPage = () => {
+  const navigate = useNavigate();
   const [captcha, setCaptcha] = useState({ question: '', answer: 0 });
   const [captchaInput, setCaptchaInput] = useState('');
   const [captchaError, setCaptchaError] = useState('');
