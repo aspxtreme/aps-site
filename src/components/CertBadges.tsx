@@ -30,8 +30,8 @@ const CertBadges = () => {
         style={{
           display: 'flex', alignItems: 'center', gap: '9px',
           padding: '7px 14px', borderRadius: '6px',
-          border: '1.5px solid #1D4ED8', color: '#1D4ED8',
-          background: '#DBEAFE', fontSize: '12px',
+          border: '1.5px solid #181B38', color: '#181B38',
+          background: '#E8E9EF', fontSize: '12px',
           fontWeight: '700', letterSpacing: '0.8px', textTransform: 'uppercase',
           textDecoration: 'none'
         }}
