@@ -50,6 +50,42 @@ const Footer = () => {
                 </a>
               </div>
             </div>
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginTop: '20px' }}>
+              <a
+                href="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-cal-eprocure-SB-DVBE-certification-id-2048903.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '9px',
+                  padding: '7px 14px', borderRadius: '6px',
+                  border: '1.5px solid #C8102E', color: '#C8102E',
+                  background: '#FEF2F2', fontSize: '12px',
+                  fontWeight: '700', letterSpacing: '0.8px', textTransform: 'uppercase',
+                  textDecoration: 'none'
+                }}
+              >
+                <img src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/ca-icon-red.svg"
+                     alt="CA" style={{ width: '28px', height: '20px', objectFit: 'contain' }} />
+                CA Certified SB
+              </a>
+              <a
+                href="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-cal-eprocure-SB-DVBE-certification-id-2048903.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '9px',
+                  padding: '7px 14px', borderRadius: '6px',
+                  border: '1.5px solid #1D4ED8', color: '#1D4ED8',
+                  background: '#DBEAFE', fontSize: '12px',
+                  fontWeight: '700', letterSpacing: '0.8px', textTransform: 'uppercase',
+                  textDecoration: 'none'
+                }}
+              >
+                <img src="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/ca-icon-blue.svg"
+                     alt="CA" style={{ width: '28px', height: '20px', objectFit: 'contain' }} />
+                CA Certified DVBE
+              </a>
+            </div>
           </div>
 
           <div className="sm:col-span-1">
@@ -63,7 +99,7 @@ const Footer = () => {
               <li>Professional Window Cleaning</li>
               <li>Building Wash Services</li>
               <li>Common Area Pressure Washing</li>
-              <li>Parking Garage Pressure Washing</li>
+              <li>Parking Sweeping & Pressure Washing</li>
               <li>Solar Panel Cleaning</li>
               <li>Rain Gutter Cleaning</li>
               <li>Floor, Tile & Carpet Cleaning</li>
@@ -90,7 +126,7 @@ const Footer = () => {
 
         <div className="border-t border-secondary-blue/30 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm sm:text-base text-white text-center md:text-left mb-4 md:mb-0">
-            &copy; 2025 All Star Property Services, Inc. All rights reserved.
+            &copy; 2026 All Star Property Services, Inc. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy-policy" onClick={scrollToTop} className="text-sm sm:text-base text-white hover:text-accent-cyan transition-colors duration-200">Privacy Policy</Link>

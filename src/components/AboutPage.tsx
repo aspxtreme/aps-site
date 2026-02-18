@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Flag, Target, Shield, CheckCircle, Users, Award } from 'lucide-react';
+import CertBadges from './CertBadges';
 
 const AboutPage = () => {
   const navigate = useNavigate();
@@ -120,6 +121,14 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
+
+        {/* CA Cert Badges */}
+        <div className="flex justify-center mb-10">
+          <CertBadges />
+        </div>
+
+        {/* Divider */}
+        <hr className="border-t border-gray-200 mb-20" />
 
         {/* Core Values */}
         <div className="mb-20">

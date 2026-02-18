@@ -331,7 +331,7 @@ const ContactPage = () => {
                   <div>
                     <p className="font-medium">Service Areas</p>
                     <p className="text-gray-300 text-sm leading-relaxed">
-                      Orange County, Los Angeles, Ventura, Santa Barbara, Riverside, San Bernardino, San Diego, Imperial Counties and parts of Kern & San Luis Obispo
+                      Throughout Southern and Northern California, including Orange County, Los Angeles, Ventura, Santa Barbara, Riverside, San Bernardino, San Diego, Imperial, Kern, San Luis Obispo, Butte, Contra Costa, El Dorado, Fresno, Marin, Sonoma, Mariposa, Merced, Monterey, Napa, Placer, San Mateo, Santa Clara, Sutter and other counties.
                     </p>
                   </div>
                 </div>

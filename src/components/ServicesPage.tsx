@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CertBadges from './CertBadges';
 import { 
   Shield, 
   CheckCircle, 
@@ -239,9 +240,12 @@ const ServicesPage = () => {
             <Settings className="w-16 h-16 text-accent-cyan mx-auto mb-6" />
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">Our Services</h1>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Whether you're managing commercial buildings, multi-unit properties, or high-end facilities, we deliver excellence across a wide range of services. 
+              Whether you're managing commercial buildings, multi-unit properties, or high-end facilities, we deliver excellence across a wide range of services.
               Every service is backed by top-quality equipment, trained staff, and the APS promise of reliability and satisfaction.
             </p>
+            <div className="mt-8">
+              <CertBadges />
+            </div>
           </div>
         </div>
       </div>
