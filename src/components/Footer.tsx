@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
             <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginTop: '20px' }}>
               <a
-                href="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-cal-eprocure-SB-DVBE-certification-id-2048903.pdf"
+                href="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/SB-DVBE-Certifications-DGS-All-Star-Property-Service.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -69,7 +69,7 @@ const Footer = () => {
                 CA Certified SB
               </a>
               <a
-                href="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-cal-eprocure-SB-DVBE-certification-id-2048903.pdf"
+                href="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/SB-DVBE-Certifications-DGS-All-Star-Property-Service.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

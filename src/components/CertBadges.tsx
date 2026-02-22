@@ -4,7 +4,7 @@ const CertBadges = () => {
   return (
     <div className="flex flex-wrap gap-3 justify-center">
       <a
-        href="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-cal-eprocure-SB-DVBE-certification-id-2048903.pdf"
+        href="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/SB-DVBE-Certifications-DGS-All-Star-Property-Service.pdf"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -24,14 +24,14 @@ const CertBadges = () => {
         CA Certified SB
       </a>
       <a
-        href="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/aps-cal-eprocure-SB-DVBE-certification-id-2048903.pdf"
+        href="https://cdn.jsdelivr.net/gh/aspxtreme/aps-images@main/SB-DVBE-Certifications-DGS-All-Star-Property-Service.pdf"
         target="_blank"
         rel="noopener noreferrer"
         style={{
           display: 'flex', alignItems: 'center', gap: '9px',
           padding: '7px 14px', borderRadius: '6px',
-          border: '1.5px solid #181B38', color: '#181B38',
-          background: '#E8E9EF', fontSize: '12px',
+          border: '1.5px solid #1D4ED8', color: '#1D4ED8',
+          background: '#DBEAFE', fontSize: '12px',
           fontWeight: '700', letterSpacing: '0.8px', textTransform: 'uppercase',
           textDecoration: 'none'
         }}
